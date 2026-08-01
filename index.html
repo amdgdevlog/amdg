@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Responsive Meta Tag (Crucial for proper scaling on iPhone and Galaxy) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
+    <title>AMDG Development | Enterprise Construction Integration (Salesforce + AWS)</title>
+    <meta name="description" content="Unifying Salesforce CRM and AWS to construct an end-to-end digital nervous system across the commercial construction lifecycle.">
+
+    <!-- Stylesheets in loading order -->
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/mobile-menu.css">
+    <link rel="stylesheet" href="/css/mega-menu.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="stylesheet" href="/css/home.css">
+
+    <!-- Scripts defer-loaded before </body> -->
+    <script src="/js/main.js" defer></script>
+    <script src="/js/mobile-drawer.js" defer></script>
+    <script src="/js/mega-menu.js" defer></script>
+    <script src="/js/animations.js" defer></script>
+</head>
+<body>
+
+    <!-- =========================================================
+         GLOBAL HEADER & NAVIGATION (Sticky)
+         ========================================================= -->
+    <header class="sticky-nav">
+        <div class="nav-container">
+            <!-- Brand Logo -->
+            <div class="brand">
+                <a href="/index.html">
+                    <img src="/assets/icons/amdg-logo.svg" alt="AMDG Development" class="logo-img">
+                    <span class="brand-text">AMDG Development</span>
+                </a>
+            </div>
+
+            <!-- Desktop Mega Menu (Hidden on Mobile) -->
+            <nav class="desktop-nav-only">
+                <ul class="nav-links">
+                    <li class="dropdown-trigger">
+                        <a href="/platform/index.html">Platform</a>
+                    </li>
+                    
+                    <!-- Solutions 5-Column Mega Menu -->
+                    <li class="dropdown-trigger mega-menu-trigger">
+                        <a href="#">Solutions</a>
+                        <div class="mega-menu grid-5-col">
+                            <div class="mega-col">
+                                <h4>1. Pre-Construction</h4>
+                                <a href="/solutions/pre-construction/ai-bid-parsing.html">AI Bid Parsing</a>
+                                <a href="/solutions/pre-construction/predictive-cost-estimation.html">Predictive Cost Est.</a>
+                                <a href="/solutions/pre-construction/massive-file-management.html">Massive File Mgmt.</a>
+                                <a href="/solutions/pre-construction/automated-subcontractor-onboarding.html">Sub Onboarding</a>
+                            </div>
+                            <div class="mega-col">
+                                <h4>2. Active Site Ops</h4>
+                                <a href="/solutions/active-site/heavy-machinery-predictive-maintenance.html">Machine Maint.</a>
+                                <a href="/solutions/active-site/computer-vision-site-safety.html">Computer Vision</a>
+                                <a href="/solutions/active-site/digital-twin-monitoring.html">Digital Twins</a>
+                                <a href="/solutions/active-site/smart-supply-chain-tracking.html">Supply Tracking</a>
+                                <a href="/solutions/active-site/weather-responsive-scheduling.html">Weather Scheduling</a>
+                                <a href="/solutions/active-site/wearable-worker-safety.html">Wearable Safety</a>
+                            </div>
+                            <div class="mega-col">
+                                <h4>3. Project Management</h4>
+                                <a href="/solutions/project-management/unified-client-command-center.html">Client Command Center</a>
+                                <a href="/solutions/project-management/intelligent-contact-center.html">Cloud Contact Center</a>
+                                <a href="/solutions/project-management/generative-ai-risk-flagging.html">GenAI Risk Flagging</a>
+                                <a href="/solutions/project-management/automated-daily-site-logs.html">Voice Daily Logs</a>
+                            </div>
+                            <div class="mega-col">
+                                <h4>4. Post-Construction</h4>
+                                <a href="/solutions/post-construction/smart-building-handoff.html">Smart Handoff</a>
+                                <a href="/solutions/post-construction/automated-warranty-triage.html">Warranty Triage</a>
+                                <a href="/solutions/post-construction/esg-sustainability-tracking.html">ESG Tracking</a>
+                            </div>
+                            <div class="mega-col">
+                                <h4>5. Enterprise IT</h4>
+                                <a href="/solutions/enterprise-it/single-source-of-truth.html">Single Source of Truth</a>
+                                <a href="/solutions/enterprise-it/agile-field-apps.html">Offline Mobile Apps</a>
+                                <a href="/solutions/enterprise-it/automated-lien-waiver-processing.html">Lien Waiver Parsing</a>
+                                <a href="/solutions/enterprise-it/disaster-recovery-archiving.html">Compliance Archiving</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="dropdown-trigger">
+                        <a href="/outcomes/index.html">Outcomes</a>
+                    </li>
+                    <li class="dropdown-trigger">
+                        <a href="/roadmap/index.html">Roadmap</a>
+                    </li>
+                    <li class="dropdown-trigger">
+                        <a href="/about/index.html">About Us</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Global Call to Action -->
+            <div class="nav-cta">
+                <a href="/contact/get-a-demo.html" class="btn-primary desktop-nav-only">[ Get a Demo ]</a>
+                <a href="/contact/get-a-demo.html" class="btn-primary-mini mobile-drawer-only">Demo</a>
+                
+                <!-- Mobile Hamburger Icon (48px tap target) -->
+                <button class="hamburger-btn mobile-drawer-only" aria-label="Open menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- =========================================================
+         MOBILE OFF-CANVAS DRAWER (Hidden by default)
+         ========================================================= -->
+    <nav class="mobile-drawer overlay-solid-bg" aria-hidden="true">
+        <div class="drawer-header">
+            <span class="brand-text">Menu</span>
+            <button class="close-drawer-btn" aria-label="Close menu">&times;</button>
+        </div>
+        <div class="drawer-content">
+            <a href="/platform/index.html" class="drawer-link">Platform</a>
+            
+            <!-- Phase Accordions for Mobile Progressive Disclosure -->
+            <div class="accordion">
+                <button class="accordion-header" aria-expanded="false">Solutions (21 Services) <span class="icon-plus"></span></button>
+                <div class="accordion-body">
+                    <div class="phase-group">
+                        <h5>Phase 1: Pre-Construction</h5>
+                        <a href="/solutions/pre-construction/ai-bid-parsing.html">AI Bid Parsing</a>
+                        <a href="/solutions/pre-construction/predictive-cost-estimation.html">Predictive Cost Estimation</a>
+                        <!-- Add other Phase 1 links here -->
+                    </div>
+                    <div class="phase-group">
+                        <h5>Phase 2: Active Site Ops</h5>
+                        <a href="/solutions/active-site/wearable-worker-safety.html">Wearable Worker Safety</a>
+                        <!-- Add other Phase 2 links here -->
+                    </div>
+                    <!-- (Phases 3-5 omitted for brevity in template, replicated via standard accordion logic) -->
+                </div>
+            </div>
+
+            <a href="/outcomes/index.html" class="drawer-link">Outcomes</a>
+            <a href="/roadmap/index.html" class="drawer-link">Implementation Roadmap</a>
+            <a href="/about/index.html" class="drawer-link">About Us</a>
+            
+            <div class="drawer-footer mobile-bottom-cta">
+                <a href="/contact/get-a-demo.html" class="btn-primary full-width">Speak to an Architect</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- =========================================================
+         MAIN CONTENT
+         ========================================================= -->
+    <main>
+        <!-- Hero Section (Typography and Texture First) -->
+        <section class="hero dark-texture-bg">
+            <div class="container layout-center text-white">
+                <h1 class="fluid-h1">Build Your Digital Nervous System.</h1>
+                <p class="hero-subtext fluid-h2-sub">
+                    Unifying <strong>Salesforce</strong> and <strong>Amazon Web Services (AWS)</strong> to construct an end-to-end cloud ecosystem across the entire commercial construction lifecycle.
+                </p>
+                <div class="hero-actions">
+                    <a href="/contact/get-a-demo.html" class="btn-primary high-vis-accent">Initiate a Blueprint Consultation</a>
+                    <a href="/platform/index.html" class="btn-secondary">Explore the Platform</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Three Pillars Section -->
+        <section class="pillars-section container">
+            <header class="section-header text-center">
+                <h2>Strategic Value Realization</h2>
+                <p>Connecting AWS cloud scale with Salesforce user workflows delivers three transformative business outcomes.</p>
+            </header>
+
+            <div class="grid-3-col">
+                <!-- Pillar 1 -->
+                <a href="/outcomes/proactive-risk-mitigation.html" class="pillar-card">
+                    <div class="icon-wrapper">
+                        <img src="/assets/icons/risk-radar.svg" alt="Risk Mitigation Icon">
+                    </div>
+                    <h3>Proactive Risk Mitigation</h3>
+                    <p>Shift from lagging indicators to real-time predictive alerts using IoT telemetry, computer vision safety checks, and generative AI text sentiment analysis.</p>
+                </a>
+                
+                <!-- Pillar 2 -->
+                <a href="/outcomes/margin-protection.html" class="pillar-card">
+                    <div class="icon-wrapper">
+                        <img src="/assets/icons/friction-gear.svg" alt="Administrative Friction Icon">
+                    </div>
+                    <h3>Eliminate Admin Friction</h3>
+                    <p>Automate labor-intensive paperwork—such as lien waiver verification, daily log dictations, and sub compliance vetting—saving thousands of hours annually.</p>
+                </a>
+
+                <!-- Pillar 3 -->
+                <a href="/outcomes/audit-proof-transparency.html" class="pillar-card">
+                    <div class="icon-wrapper">
+                        <img src="/assets/icons/shield-check.svg" alt="Audit-Proof Icon">
+                    </div>
+                    <h3>Audit-Proof Transparency</h3>
+                    <p>Create immutable, indexed data trails from pre-construction bidding to 20-year legal archiving, building client trust and protecting margins from litigation.</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Interactive Integration Blueprint Matrix Section -->
+        <section class="blueprint-section container bg-concrete-gray">
+            <header class="section-header text-center">
+                <h2>The Enterprise Integration Blueprint</h2>
+                <p>Explore the 21 specialized cloud architecture solutions spanning the project lifecycle.</p>
+            </header>
+
+            <!-- 
+                 Mobile: Flickable horizontal carousel or stacked cards
+                 Desktop: 5-column CSS grid flowchart
+            -->
+            <div class="blueprint-matrix scroll-snap-x">
+                
+                <!-- Phase 1 Column -->
+                <div class="matrix-phase-col snap-center">
+                    <div class="phase-header">Phase 1 <br> Pre-Construction</div>
+                    <ul class="phase-links">
+                        <li><a href="/solutions/pre-construction/ai-bid-parsing.html">01. AI Bid Parsing</a></li>
+                        <li><a href="/solutions/pre-construction/predictive-cost-estimation.html">02. Predictive Cost Est.</a></li>
+                        <li><a href="/solutions/pre-construction/massive-file-management.html">03. Massive File Mgmt.</a></li>
+                        <li><a href="/solutions/pre-construction/automated-subcontractor-onboarding.html">04. Sub Onboarding</a></li>
+                    </ul>
+                </div>
+
+                <!-- Phase 2 Column -->
+                <div class="matrix-phase-col snap-center">
+                    <div class="phase-header">Phase 2 <br> Active Site Ops</div>
+                    <ul class="phase-links">
+                        <li><a href="/solutions/active-site/heavy-machinery-predictive-maintenance.html">05. Heavy Machine Maint.</a></li>
+                        <li><a href="/solutions/active-site/computer-vision-site-safety.html">06. Computer Vision Safety</a></li>
+                        <li><a href="/solutions/active-site/digital-twin-monitoring.html">07. Digital Twin Monitoring</a></li>
+                        <li><a href="/solutions/active-site/smart-supply-chain-tracking.html">08. Smart Supply Chain</a></li>
+                        <li><a href="/solutions/active-site/weather-responsive-scheduling.html">09. Weather Scheduling</a></li>
+                        <li><a href="/solutions/active-site/wearable-worker-safety.html">10. Wearable Safety</a></li>
+                    </ul>
+                </div>
+
+                <!-- Phase 3 Column -->
+                <div class="matrix-phase-col snap-center">
+                    <div class="phase-header">Phase 3 <br> Project Management</div>
+                    <ul class="phase-links">
+                        <li><a href="/solutions/project-management/unified-client-command-center.html">11. Client Command Center</a></li>
+                        <li><a href="/solutions/project-management/intelligent-contact-center.html">12. Cloud Contact Center</a></li>
+                        <li><a href="/solutions/project-management/generative-ai-risk-flagging.html">13. GenAI Risk Flagging</a></li>
+                        <li><a href="/solutions/project-management/automated-daily-site-logs.html">14. Voice Daily Logs</a></li>
+                    </ul>
+                </div>
+
+                <!-- Phase 4 Column -->
+                <div class="matrix-phase-col snap-center">
+                    <div class="phase-header">Phase 4 <br> Post-Construction</div>
+                    <ul class="phase-links">
+                        <li><a href="/solutions/post-construction/smart-building-handoff.html">15. Smart Handoff</a></li>
+                        <li><a href="/solutions/post-construction/automated-warranty-triage.html">16. Warranty Triage</a></li>
+                        <li><a href="/solutions/post-construction/esg-sustainability-tracking.html">17. ESG Tracking</a></li>
+                    </ul>
+                </div>
+
+                <!-- Phase 5 Column -->
+                <div class="matrix-phase-col snap-center highlight-phase">
+                    <div class="phase-header">Phase 5 <br> Enterprise Infrastructure</div>
+                    <ul class="phase-links">
+                        <li><a href="/solutions/enterprise-it/single-source-of-truth.html">18. Single Source Truth</a></li>
+                        <li><a href="/solutions/enterprise-it/agile-field-apps.html">19. Offline Mobile Apps</a></li>
+                        <li><a href="/solutions/enterprise-it/automated-lien-waiver-processing.html">20. Lien Waiver Parsing</a></li>
+                        <li><a href="/solutions/enterprise-it/disaster-recovery-archiving.html">21. Compliance Archiving</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            
+            <div class="text-center cta-spacing-top">
+                <a href="/roadmap/index.html" class="btn-text">View the 3-Phase Implementation Roadmap &rarr;</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- =========================================================
+         GLOBAL FOOTER
+         ========================================================= -->
+    <footer class="global-footer bg-blueprint-navy text-white">
+        <div class="container grid-5-col">
+            <div class="footer-brand footer-col-span-2">
+                <img src="/assets/icons/amdg-logo-white.svg" alt="AMDG Development" class="footer-logo">
+                <p>Constructing the digital nervous system for commercial general contractors, heavy civil builders, and enterprise real estate developers.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Platform</h4>
+                <ul>
+                    <li><a href="/platform/ecosystem.html">AWS + Salesforce</a></li>
+                    <li><a href="/platform/security-compliance.html">Security & Compliance</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="/about/integration-architects.html">Leadership</a></li>
+                    <li><a href="/about/careers.html">Careers</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="/contact/get-a-demo.html">Get a Demo</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 AMDG Development. Proprietary and confidential. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
