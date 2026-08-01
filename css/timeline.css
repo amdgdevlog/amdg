@@ -1,0 +1,185 @@
+/* =========================================================
+   IMPLEMENTATION TIMELINE (Roadmap & Phases)
+   ========================================================= */
+
+.timeline-section {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--clr-white);
+}
+
+/* The core wrapper for the timeline */
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: var(--spacing-md) 0;
+}
+
+/* The vertical center line (Mobile: left side, Desktop: center) */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--clr-concrete-dark);
+    top: 0;
+    bottom: 0;
+    left: 24px; /* Align to the left for mobile */
+    margin-left: -2px;
+    border-radius: 2px;
+}
+
+/* Individual timeline item container */
+.timeline-item {
+    position: relative;
+    width: 100%;
+    padding-left: 60px; /* Space for the line and marker */
+    padding-right: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Clearfix for floating elements in desktop view */
+.timeline-item::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* The Node/Marker on the line */
+.timeline-marker {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 24px;
+    top: 24px; /* Align with the top of the content card */
+    margin-left: -10px;
+    background-color: var(--clr-white);
+    border: 4px solid var(--clr-high-vis-orange);
+    border-radius: 50%;
+    z-index: 2;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Highlight the marker on hover */
+.timeline-item:hover .timeline-marker {
+    background-color: var(--clr-high-vis-orange);
+    transform: scale(1.2);
+}
+
+/* The actual content box */
+.timeline-content {
+    position: relative;
+    background-color: var(--clr-concrete-gray);
+    border-radius: 8px;
+    padding: var(--spacing-md);
+    border: 1px solid var(--clr-concrete-dark);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+/* Little directional arrow pointing to the line */
+.timeline-content::before {
+    content: " ";
+    position: absolute;
+    top: 24px;
+    left: -12px;
+    border-width: 12px 12px 12px 0;
+    border-style: solid;
+    border-color: transparent var(--clr-concrete-dark) transparent transparent;
+}
+.timeline-content::after {
+    content: " ";
+    position: absolute;
+    top: 25px;
+    left: -10px;
+    border-width: 11px 11px 11px 0;
+    border-style: solid;
+    border-color: transparent var(--clr-concrete-gray) transparent transparent;
+}
+
+.timeline-date {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--clr-high-vis-orange);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-title {
+    font-size: 1.25rem;
+    color: var(--clr-blueprint-navy);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-description {
+    color: var(--clr-text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+/* =========================================================
+   DESKTOP ALTERNATING LAYOUT
+   ========================================================= */
+@media (min-width: 768px) {
+    /* Move the line to the exact center */
+    .timeline::after {
+        left: 50%;
+    }
+
+    /* Reset width to 50% for alternating sides */
+    .timeline-item {
+        width: 50%;
+        margin-bottom: var(--spacing-xl);
+    }
+
+    /* Left Side Items */
+    .timeline-item:nth-child(odd) {
+        left: 0;
+        padding-left: 0;
+        padding-right: 40px;
+    }
+
+    /* Right Side Items */
+    .timeline-item:nth-child(even) {
+        left: 50%;
+        padding-left: 40px;
+        padding-right: 0;
+    }
+
+    /* Move markers to the center line */
+    .timeline-marker {
+        left: 100%; /* For odd items, pushes to the right edge (center of wrapper) */
+        margin-left: -10px;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-marker {
+        left: 0; /* For even items, pulls to the left edge (center of wrapper) */
+    }
+
+    /* Re-orient the arrows for left-side items */
+    .timeline-item:nth-child(odd) .timeline-content::before {
+        left: auto;
+        right: -12px;
+        border-width: 12px 0 12px 12px;
+        border-color: transparent transparent transparent var(--clr-concrete-dark);
+    }
+    .timeline-item:nth-child(odd) .timeline-content::after {
+        left: auto;
+        right: -10px;
+        border-width: 11px 0 11px 11px;
+        border-color: transparent transparent transparent var(--clr-concrete-gray);
+    }
+
+    /* Align arrows for right-side items */
+    .timeline-item:nth-child(even) .timeline-content::before {
+        left: -12px;
+        border-width: 12px 12px 12px 0;
+        border-color: transparent var(--clr-concrete-dark) transparent transparent;
+    }
+    .timeline-item:nth-child(even) .timeline-content::after {
+        left: -10px;
+        border-width: 11px 11px 11px 0;
+        border-color: transparent var(--clr-concrete-gray) transparent transparent;
+    }
+}
