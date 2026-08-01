@@ -1,0 +1,104 @@
+/* =========================================================
+   DESKTOP MEGA MENU
+   ========================================================= */
+
+/* Desktop Navigation Base */
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: var(--spacing-md);
+    height: 100%;
+    align-items: center;
+}
+
+.dropdown-trigger > a {
+    font-weight: 600;
+    color: var(--clr-blueprint-navy);
+    padding: var(--spacing-sm) 0;
+    position: relative;
+}
+
+.dropdown-trigger > a::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--clr-high-vis-orange);
+    transition: width 0.3s ease;
+}
+
+.dropdown-trigger:hover > a::after {
+    width: 100%;
+}
+
+/* Mega Menu Container Setup */
+.mega-menu-trigger {
+    /* Set static so the mega-menu can be 100% of the viewport width if desired, 
+       but we will constrain it to the container instead for better reading */
+    position: static; 
+}
+
+/* The actual Dropdown Window */
+.mega-menu {
+    position: absolute;
+    top: 70px; /* Matches min-height of nav-container */
+    left: 0;
+    width: 100%;
+    background-color: var(--clr-white);
+    border-top: 1px solid var(--clr-concrete-dark);
+    border-bottom: 3px solid var(--clr-high-vis-orange);
+    box-shadow: 0 15px 35px rgba(11, 27, 61, 0.1);
+    
+    /* Padding internally to align with the container max-width */
+    padding: var(--spacing-md) max(calc((100vw - var(--container-max-width)) / 2), var(--spacing-md));
+    
+    /* Visually Hidden by default */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+    z-index: var(--z-overlay);
+}
+
+/* Hover Intent (Pure CSS) */
+.mega-menu-trigger:hover .mega-menu,
+.mega-menu-trigger:focus-within .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Column Styling */
+.mega-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.mega-col h4 {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--clr-blueprint-navy-light);
+    margin-bottom: var(--spacing-sm);
+    padding-bottom: var(--spacing-xs);
+    border-bottom: 2px solid var(--clr-concrete-gray);
+}
+
+.mega-col a {
+    color: var(--clr-text-main);
+    padding: 0.35rem 0;
+    font-size: 0.95rem;
+    transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.mega-col a:hover, 
+.mega-col a:focus {
+    color: var(--clr-high-vis-orange);
+    padding-left: 5px; /* Subtle right nudge */
+    outline: none;
+}
