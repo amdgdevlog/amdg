@@ -8,28 +8,31 @@
     <title>AMDG Development | Enterprise Construction Integration (Salesforce + AWS)</title>
     <meta name="description" content="Unifying Salesforce CRM and AWS to construct an end-to-end digital nervous system across the commercial construction lifecycle.">
 
-    <!-- 1. Reset/Normalize -->
+    <!-- 1. Favicon (Using your existing SVG logo for a crisp browser tab icon) -->
+    <link rel="icon" type="image/svg+xml" href="assets/icons/amdg-logo.svg">
+
+    <!-- 2. Preconnect to Google Fonts (Speeds up font loading dramatically) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- 3. Typography Engine: Inter (Enterprise Base) & Roboto Mono (Tech/Blueprint Accents) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- 4. Stylesheets in Strict Cascade Order -->
     <link rel="stylesheet" href="css/normalize.css">
-
-    <!-- 2. Global Variables & Base Styles -->
     <link rel="stylesheet" href="css/global.css">
-
-    <!-- 3. Components & Pages -->
+    <link rel="stylesheet" href="css/responsive.css"> <!-- Loaded early so clamp() variables apply downstream -->
     <link rel="stylesheet" href="css/mega-menu.css">
     <link rel="stylesheet" href="css/mobile-menu.css">
-    <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/solution-template.css">
-    <link rel="stylesheet" href="css/timeline.css">
+    <link rel="stylesheet" href="css/home.css"> <!-- Page-specific styles load last to override safely -->
 
-    <!-- 4. Responsive Utilities & Print (Must be last) -->
-    <link rel="stylesheet" href="css/responsive.css">
-
-    <!-- Scripts defer-loaded before </body> -->
-    <script src="/js/main.js" defer></script>
-    <script src="/js/mobile-drawer.js" defer></script>
-    <script src="/js/mega-menu.js" defer></script>
-    <script src="/js/animations.js" defer></script>
+    <!-- 5. Scripts (Deferred to guarantee the DOM exists before they run) -->
+    <script src="js/main.js" defer></script>
+    <script src="js/mobile-drawer.js" defer></script>
+    <script src="js/mega-menu.js" defer></script>
+    <script src="js/animations.js" defer></script>
 </head>
+
 <body>
 
     <!-- =========================================================
