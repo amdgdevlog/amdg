@@ -1,0 +1,148 @@
+/* =========================================================
+   SOLUTION TEMPLATE (Individual Service Pages)
+   ========================================================= */
+
+/* Solution Hero Section */
+.solution-hero {
+    background-color: var(--clr-blueprint-navy);
+    color: var(--clr-white);
+    padding: var(--spacing-xl) 0 var(--spacing-lg);
+    border-bottom: 4px solid var(--clr-high-vis-orange);
+}
+
+.solution-breadcrumbs {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--spacing-sm);
+    color: var(--clr-concrete-dark);
+}
+
+.solution-breadcrumbs a {
+    color: var(--clr-high-vis-orange);
+}
+
+.solution-breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+/* Tech Stack Badges (AWS / Salesforce / IoT) */
+.tech-stack-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: var(--spacing-sm) 0 var(--spacing-md);
+}
+
+.tech-tag {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    color: var(--clr-white);
+}
+
+.tech-tag.aws {
+    border-left: 3px solid #FF9900; /* AWS Orange */
+}
+
+.tech-tag.salesforce {
+    border-left: 3px solid #00A1E0; /* Salesforce Blue */
+}
+
+/* Architecture Layout Grid */
+.architecture-section {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--clr-concrete-gray);
+}
+
+.architecture-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+    align-items: center;
+}
+
+@media (min-width: 1024px) {
+    .architecture-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.architecture-diagram-wrapper {
+    background: var(--clr-white);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    border: 1px solid var(--clr-concrete-dark);
+    box-shadow: 0 10px 30px rgba(11, 27, 61, 0.05);
+}
+
+.architecture-diagram-wrapper img,
+.architecture-diagram-wrapper svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Data Flow / Step-by-Step Lists */
+.data-flow-list {
+    list-style: none;
+    counter-reset: flow-counter;
+}
+
+.data-flow-list li {
+    position: relative;
+    padding-left: 3.5rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.data-flow-list li::before {
+    counter-increment: flow-counter;
+    content: counter(flow-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--clr-blueprint-navy-light);
+    color: var(--clr-white);
+    font-family: var(--font-mono);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.data-flow-list h4 {
+    margin-bottom: 0.25rem;
+    color: var(--clr-blueprint-navy);
+}
+
+.data-flow-list p {
+    color: var(--clr-text-muted);
+    font-size: 0.95rem;
+}
+
+/* Features Grid */
+.solution-features {
+    padding: var(--spacing-xl) 0;
+}
+
+.feature-card {
+    padding: var(--spacing-md);
+    border-left: 4px solid var(--clr-concrete-dark);
+    transition: border-color 0.3s ease;
+}
+
+.feature-card:hover {
+    border-left-color: var(--clr-high-vis-orange);
+}
+
+.feature-card h4 {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+}
