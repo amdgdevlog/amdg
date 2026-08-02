@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
+    <title>Digital Twin Site Monitoring | AMDG Development</title>
+    <meta name="description" content="Unify spatial 3D visualization from AWS IoT TwinMaker with automated case management in Salesforce Service Cloud to monitor active jobsites in real time.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../../assets/icons/amdg-logo.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets in Strict Cascade Order -->
+    <link rel="stylesheet" href="../../css/normalize.css">
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+    <link rel="stylesheet" href="../../css/mega-menu.css">
+    <link rel="stylesheet" href="../../css/mobile-menu.css">
+    <link rel="stylesheet" href="../../css/solution-template.css">
+
+    <!-- Scripts -->
+    <script src="../../js/main.js" defer></script>
+    <script src="../../js/mobile-drawer.js" defer></script>
+    <script src="../../js/mega-menu.js" defer></script>
+    <script src="../../js/animations.js" defer></script>
+</head>
+
+<body>
+
+    <!-- =========================================================
+         GLOBAL HEADER & NAVIGATION (Sticky)
+         ========================================================= -->
+    <header class="sticky-nav">
+        <div class="nav-container">
+            <div class="brand">
+                <a href="../../index.html">
+                    <img src="../../assets/icons/amdg-logo.png" alt="AMDG Development" class="logo-img">
+                </a>
+            </div>
+
+            <nav class="desktop-nav-only">
+                <ul class="nav-links">
+                    <li class="dropdown-trigger">
+                        <a href="../../platform/index.html">Platform</a>
+                    </li>
+                    
+                    <li class="dropdown-trigger mega-menu-trigger">
+                        <a href="#">Solutions</a>
+                        <div class="mega-menu grid-5-col">
+                            <div class="mega-col">
+                                <h4>1. Pre-Construction</h4>
+                                <a href="../../solutions/pre-construction/ai-bid-parsing.html">AI Bid Parsing</a>
+                                <a href="../../solutions/pre-construction/predictive-cost-estimation.html">Predictive Cost Est.</a>
+                                <a href="../../solutions/pre-construction/massive-file-management.html">Massive File Mgmt.</a>
+                                <a href="../../solutions/pre-construction/automated-subcontractor-onboarding.html">Sub Onboarding</a>
+                            </div>
+                            <div class="mega-col">
+                                <h4>2. Active Site Ops</h4>
+                                <a href="../../solutions/active-site/heavy-machinery-predictive-maintenance.html">Machine Maint.</a>
+                                <a href="../../solutions/active-site/computer-vision-site-safety.html">Computer Vision</a>
+                                <a href="../../solutions/active-site/digital-twin-monitoring.html">Digital Twins</a>
+                                <a href="../../solutions/active-site/smart-supply-chain-tracking.html">Supply Tracking</a>
+                                <a href="../../solutions/active-site/weather-responsive-scheduling.html">Weather Scheduling</a>
+                                <a href="../../solutions/active-site/wearable-worker-safety.html">Wearable Safety</a>
+                            </div>
+                            <div class="mega-col">
+                                <h4>3. Project Management</h4>
+                                <a href="../../solutions/project-management/unified-client-command-center.html">Client Command Center</a>
+                                <a href="../../solutions/project-management/intelligent-contact-center.html">Cloud Contact Center</a>
+                                <a href="../../solutions/project-management/generative-ai-risk-flagging.html">GenAI Risk Flagging</a>
+                                <a href="../../solutions/project-management/automated-daily-site-logs.html">Voice Daily Logs</a>
+                            </div>
+                            <div class="mega-col">
+                                <h4>4. Post-Construction</h4>
+                                <a href="../../solutions/post-construction/smart-building-handoff.html">Smart Handoff</a>
+                                <a href="../../solutions/post-construction/automated-warranty-triage.html">Warranty Triage</a>
+                                <a href="../../solutions/post-construction/esg-sustainability-tracking.html">ESG Tracking</a>
+                            </div>
+                            <div class="mega-col">
+                                <h4>5. Enterprise IT</h4>
+                                <a href="../../solutions/enterprise-it/single-source-of-truth.html">Single Source of Truth</a>
+                                <a href="../../solutions/enterprise-it/agile-field-apps.html">Offline Mobile Apps</a>
+                                <a href="../../solutions/enterprise-it/automated-lien-waiver-processing.html">Lien Waiver Parsing</a>
+                                <a href="../../solutions/enterprise-it/disaster-recovery-archiving.html">Compliance Archiving</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="dropdown-trigger">
+                        <a href="../../outcomes/index.html">Outcomes</a>
+                    </li>
+                    <li class="dropdown-trigger">
+                        <a href="../../roadmap/index.html">Roadmap</a>
+                    </li>
+                    <li class="dropdown-trigger">
+                        <a href="../../about/index.html">About Us</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="nav-cta">
+                <a href="../../contact/get-a-demo.html" class="btn-primary desktop-nav-only">[ Get a Demo ]</a>
+                <a href="../../contact/get-a-demo.html" class="btn-primary-mini mobile-drawer-only">Demo</a>
+                
+                <button class="hamburger-btn mobile-drawer-only" aria-label="Open menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- =========================================================
+         MOBILE OFF-CANVAS DRAWER
+         ========================================================= -->
+    <nav class="mobile-drawer overlay-solid-bg" aria-hidden="true">
+        <div class="drawer-header">
+            <span class="brand-text">Menu</span>
+            <button class="close-drawer-btn" aria-label="Close menu">&times;</button>
+        </div>
+        <div class="drawer-content">
+            <a href="../../platform/index.html" class="drawer-link">Platform</a>
+            
+            <div class="accordion">
+                <button class="accordion-header" aria-expanded="false">Solutions (21 Services) <span class="icon-plus"></span></button>
+                <div class="accordion-body">
+                    <div class="phase-group">
+                        <h5>Phase 1: Pre-Construction</h5>
+                        <a href="../../solutions/pre-construction/ai-bid-parsing.html">AI Bid Parsing</a>
+                        <a href="../../solutions/pre-construction/predictive-cost-estimation.html">Predictive Cost Estimation</a>
+                    </div>
+                    <div class="phase-group">
+                        <h5>Phase 2: Active Site Ops</h5>
+                        <a href="../../solutions/active-site/heavy-machinery-predictive-maintenance.html">Heavy Machinery Predictive Maintenance</a>
+                        <a href="../../solutions/active-site/computer-vision-site-safety.html">Computer Vision Site Safety</a>
+                        <a href="../../solutions/active-site/digital-twin-monitoring.html">Digital Twin Site Monitoring</a>
+                        <a href="../../solutions/active-site/wearable-worker-safety.html">Wearable Worker Safety</a>
+                    </div>
+                </div>
+            </div>
+
+            <a href="../../outcomes/index.html" class="drawer-link">Outcomes</a>
+            <a href="../../roadmap/index.html" class="drawer-link">Implementation Roadmap</a>
+            <a href="../../about/index.html" class="drawer-link">About Us</a>
+            
+            <div class="drawer-footer mobile-bottom-cta">
+                <a href="../../contact/get-a-demo.html" class="btn-primary full-width">Speak to an Architect</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- =========================================================
+         MAIN CONTENT
+         ========================================================= -->
+    <main>
+        
+        <!-- Solution Header Section -->
+        <section class="solution-header dark-texture-bg text-white">
+            <div class="container">
+                <nav class="breadcrumb">
+                    <a href="../../index.html">Home</a> &gt; 
+                    <a href="../../index.html#blueprint-matrix">Phase 2: Active Site Ops</a> &gt; 
+                    <span>Digital Twins</span>
+                </nav>
+
+                <div class="tech-badge-container">
+                    <span class="tech-badge">AWS IoT TwinMaker</span>
+                    <span class="tech-badge">AWS IoT SiteWise</span>
+                    <span class="tech-badge">Salesforce Service Cloud</span>
+                </div>
+
+                <h1 class="fluid-h1">Immersive Jobsite Intelligence: Digital Twin Site Monitoring</h1>
+                
+                <p class="hero-subtext fluid-h2-sub">
+                    Combine spatial 3D visualization from AWS IoT TwinMaker with automated case management in Salesforce Service Cloud to monitor active jobsites in real time.
+                </p>
+            </div>
+        </section>
+
+        <!-- Solution Body Content & Sidebar Grid -->
+        <section class="container solution-body-grid">
+            <div class="solution-main-column">
+                
+                <!-- Overview -->
+                <article class="content-block">
+                    <p class="lead-paragraph">
+                        As commercial construction projects grow in scale and technical complexity, managing operations across sprawling physical environments becomes increasingly challenging. Project executives, engineers, and superintendents are inundated with disparate data streams—2D CAD drawings, BIM models, environmental IoT sensor feeds, site camera streams, and localized equipment telemetry.
+                    </p>
+                    <p>
+                        When these critical operational metrics remain isolated in separate software systems, project managers are forced to manually correlate data to understand site conditions. A temperature spike in a curing concrete slab, a sudden rise in dust and noise emissions, or structural stress on temporary shoring often goes unnoticed until it causes material damage, project delays, or regulatory fines.
+                    </p>
+                    <p>
+                        To achieve complete operational clarity, leading contractors are adopting <strong>Digital Twin technology</strong>. By combining spatial 3D visualization from <strong>AWS IoT TwinMaker</strong> with automated case management in <strong>Salesforce Service Cloud</strong>, contractors create a real-time, 3D replica of their active jobsite that automatically flags operational risks and dispatches site teams.
+                    </p>
+                </article>
+
+                <hr class="section-divider">
+
+                <!-- The Problem -->
+                <article class="content-block">
+                    <h2>The Problem: Siloed Site Data, Blind Spots, &amp; Slow Emergency Response</h2>
+                    <p>
+                        Traditional jobsite monitoring creates severe operational friction for construction management teams:
+                    </p>
+                    <div class="callout-box">
+                        <ol>
+                            <li><strong>Contextless Data Streams:</strong> Viewing raw sensor numbers on a flat dashboard (e.g., "Sensor 42 measured 85&deg;C") provides zero spatial context. Engineers must waste time identifying where "Sensor 42" is located on a multi-story physical layout.</li>
+                            <li><strong>Siloed Stakeholder Views:</strong> Office-based project executives viewing financial and schedule updates in Salesforce lack a live window into physical site conditions, while field superintendents lack instant visibility into logged service cases and subcontractor contracts.</li>
+                            <li><strong>Reactive Issue Escalation:</strong> When environmental thresholds (e.g., decibel limits, vibration levels, or toxic gas emissions) are breached, site managers often learn about them through noise complaints or regulatory fines rather than proactive automated alerts.</li>
+                        </ol>
+                    </div>
+                </article>
+
+                <hr class="section-divider">
+
+                <!-- The Solution & Architecture -->
+                <article class="content-block">
+                    <h2>The Solution: Real-Time 3D Spatial Intelligence via AWS &amp; Salesforce Service Cloud</h2>
+                    <p>
+                        By integrating <strong>AWS IoT TwinMaker</strong> with <strong>Salesforce Service Cloud</strong>, construction firms unify spatial 3D modeling, real-time IoT telematics, and enterprise service management into a single command center.
+                    </p>
+
+                    <!-- Blueprint Architecture Visual Block -->
+                    <div class="architecture-diagram-wrapper">
+                        <div class="diagram-header-bar">
+                            <span>ARCHITECTURE BLUEPRINT: 3D DIGITAL TWIN STREAM</span>
+                            <span>SYS-REF: AWS-SF-04</span>
+                        </div>
+                        <pre class="diagram-ascii">
+Physical Jobsite Sensors &amp; Video Feeds
+ (Concrete Temp, Vibration, Dust, Cameras)
+                    │
+                    ▼
+ AWS IoT SiteWise / Kinesis Video
+                    │
+                    ▼
+            AWS IoT TwinMaker
+ (3D BIM Model + Real-Time Data Overlay)
+                    │
+         ┌──────────┴──────────┐
+         ▼                     ▼
+ Spatial 3D Scene     AWS Lambda Event
+ (Visual Data Overlay)         │
+                               ▼
+                    Salesforce Service Cloud
+                (Auto-Created High-Priority Case)
+                               │
+                               ▼
+                     Automated Field Action
+             (Task Dispatched to Site Supervisor)
+                        </pre>
+                    </div>
+
+                    <h3>How the Architecture Works</h3>
+                    <ol class="data-flow-list">
+                        <li>
+                            <strong>Spatial 3D Model Aggregation:</strong> <strong>AWS IoT TwinMaker</strong> imports existing 3D CAD or BIM models (e.g., <code>.gltf</code> or <code>.glb</code> files) to construct a spatial digital twin of the construction site.
+                        </li>
+                        <li>
+                            <strong>Binding Disparate Data Streams:</strong> TwinMaker constructs a unified knowledge graph, binding live data sources—such as environmental sensors (temperature, humidity, vibration), equipment telemetry, and live camera feeds—directly to corresponding 3D objects in the scene.
+                        </li>
+                        <li>
+                            <strong>Spatial Anomaly Detection:</strong> When live telematics breach predefined safety or engineering thresholds (e.g., concrete curing temperatures dropping below safety limits or structural shoring experiencing excessive strain), TwinMaker highlights the specific 3D location in red on the digital twin scene.
+                        </li>
+                        <li>
+                            <strong>Automated Salesforce Case Creation:</strong> An <strong>AWS Lambda</strong> rule immediately pushes the anomaly payload into <strong>Salesforce Service Cloud</strong>. The system automatically creates a high-priority <strong>Service Case</strong> containing:
+                            <ul>
+                                <li>The exact spatial location and floor level of the affected zone.</li>
+                                <li>Telemetry logs leading up to the threshold breach.</li>
+                                <li>Direct deep-links to view the live 3D TwinMaker scene inside Salesforce.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Contextual Field Dispatch:</strong> Salesforce automatically assigns the case to the appropriate field engineer or subcontractor, attaching safety procedures and tracking resolution progress in real time.
+                        </li>
+                    </ol>
+
+                    <!-- Video Resource Block -->
+                    <div class="video-embed-container" style="margin-top: 2rem;">
+                        <h4 style="margin-bottom: 0.75rem;">Official AWS Overview: Digital Twins with AWS IoT TwinMaker</h4>
+                        <p style="font-size: 0.95rem; margin-bottom: 1rem; color: var(--text-muted);">Watch this official walkthrough demonstrating how AWS IoT TwinMaker unifies 3D models and real-time operational data into a single interactive scene.</p>
+                        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; border: 1px solid var(--border-color);">
+                            <iframe src="https://www.youtube.com/embed/gfXNYsIogHk" title="Making It Easy to Create Digital Twins with AWS IoT TwinMaker" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </article>
+
+                <hr class="section-divider">
+
+                <!-- Impact & Results Grid -->
+                <article class="content-block">
+                    <h2>Business Impact &amp; Results</h2>
+                    <p>Merging 3D digital twins with automated service workflows transforms jobsite monitoring from reactive monitoring to proactive site control:</p>
+
+                    <div class="impact-grid">
+                        <div class="impact-card">
+                            <span class="metric">75%</span>
+                            <h4>Faster Response Times</h4>
+                            <p>Site managers immediately pinpoint the exact physical location of an anomaly, drastically reducing diagnostic and response timelines.</p>
+                        </div>
+                        <div class="impact-card">
+                            <span class="metric">Zero</span>
+                            <h4>Environmental Fines</h4>
+                            <p>Real-time tracking of dust, noise, and vibration levels prevents environmental compliance breaches and municipal work-stop orders.</p>
+                        </div>
+                        <div class="impact-card">
+                            <span class="metric">360&deg;</span>
+                            <h4>Executive Visibility</h4>
+                            <p>Project owners can virtually walk the active jobsite from anywhere in the world using Salesforce Experience Cloud embedded with 3D scenes.</p>
+                        </div>
+                        <div class="impact-card">
+                            <span class="metric">Min</span>
+                            <h4>Quality-Control Rework</h4>
+                            <p>Catching structural stress, moisture intrusion, or curing anomalies in real time prevents costly post-build demolition.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <hr class="section-divider">
+
+                <!-- Implementation Support -->
+                <article class="content-block">
+                    <h2>Why Partner with Us for Implementation?</h2>
+                    <p>
+                        Building an enterprise-grade digital twin requires deep technical capability in spatial computing, IoT sensor integration, and CRM workflow automation.
+                    </p>
+                    <p>We offer an end-to-end deployment service:</p>
+                    <ul>
+                        <li><strong>BIM-to-Twin Conversion &amp; AWS TwinMaker Setup:</strong> Converting complex architectural BIM files into optimized web-3D formats and building your spatial knowledge graph in AWS IoT TwinMaker.</li>
+                        <li><strong>Sensor Connector &amp; Gateway Architecture:</strong> Connecting jobsite IoT sensors, edge gateways, and video streams (via AWS IoT SiteWise and Amazon Kinesis) to your digital twin workspace.</li>
+                        <li><strong>Embedded Salesforce Experience:</strong> Embedding interactive 3D TwinMaker canvas components directly into Salesforce Service Cloud layouts and building automated case-routing logic tailored to your project operations.</li>
+                    </ul>
+                </article>
+
+            </div>
+
+            <!-- Sticky Sidebar Column -->
+            <aside class="solution-sidebar">
+                <div class="sidebar-card highlight-card">
+                    <h3>Deploy This Architecture</h3>
+                    <p>Schedule a blueprint consultation with our cloud engineers to evaluate your active site ops integration.</p>
+                    <a href="../../contact/get-a-demo.html" class="btn-primary high-vis-accent full-width text-center">Initiate Consultation</a>
+                </div>
+
+                <div class="sidebar-card">
+                    <h4>Phase 2 Solutions</h4>
+                    <ul class="sidebar-links">
+                        <li><a href="heavy-machinery-predictive-maintenance.html">01. Machine Maint.</a></li>
+                        <li><a href="computer-vision-site-safety.html">02. Computer Vision</a></li>
+                        <li><a href="digital-twin-monitoring.html" class="active">03. Digital Twins</a></li>
+                        <li><a href="smart-supply-chain-tracking.html">04. Supply Tracking</a></li>
+                        <li><a href="weather-responsive-scheduling.html">05. Weather Scheduling</a></li>
+                        <li><a href="wearable-worker-safety.html">06. Wearable Safety</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </section>
+
+    </main>
+
+    <!-- =========================================================
+         GLOBAL FOOTER
+         ========================================================= -->
+    <footer class="global-footer bg-blueprint-navy text-white">
+        <div class="container grid-5-col">
+            <div class="footer-brand footer-col-span-2">
+                <img src="../../assets/icons/amdg-logo-white.svg" alt="AMDG Development" class="footer-logo">
+                <p>Constructing the digital nervous system for commercial general contractors, heavy civil builders, and enterprise real estate developers.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Platform</h4>
+                <ul>
+                    <li><a href="../../platform/ecosystem.html">AWS + Salesforce</a></li>
+                    <li><a href="../../platform/security-compliance.html">Security &amp; Compliance</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="../../about/integration-architects.html">Leadership</a></li>
+                    <li><a href="../../about/careers.html">Careers</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="../../contact/get-a-demo.html">Get a Demo</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 AMDG Development. Proprietary and confidential. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
