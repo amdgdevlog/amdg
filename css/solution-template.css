@@ -240,3 +240,65 @@
     color: var(--clr-high-vis-orange);
     font-weight: 600;
 }
+
+/* =========================================================
+   7. MOBILE OPTIMIZATIONS (Portrait Phones)
+   ========================================================= */
+@media (max-width: 768px) {
+    /* 1. Kill horizontal scrolling entirely */
+    html, body {
+        overflow-x: hidden;
+    }
+    
+    .solution-body-grid {
+        padding: 1.5rem 1rem;
+        gap: 1.5rem;
+    }
+
+    /* 2. Reclaim screen real estate by shrinking padding */
+    .content-block, .sidebar-card {
+        padding: 1.25rem; 
+        overflow-wrap: break-word; /* Forces long words/URLs to wrap instead of pushing screen wide */
+    }
+
+    /* 3. Fix the Parallax Bug on mobile */
+    .solution-header {
+        /* 'fixed' causes a massive zoom/overflow bug on iOS Safari. 'scroll' fixes it. */
+        background-attachment: scroll; 
+        padding: 2.5rem 1rem 1.5rem;
+    }
+
+    .hero-subtext {
+        font-size: 0.95rem;
+    }
+
+    /* 4. Tame the Architecture Diagram */
+    .architecture-diagram-wrapper {
+        /* Pulls the dark box flush with the screen edges on mobile for maximum space */
+        margin: 1.5rem -1.25rem; 
+        padding: 1rem;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+        width: calc(100% + 2.5rem); 
+    }
+
+    .diagram-ascii {
+        /* Shrinks the mono text so less swiping is needed to read the diagram */
+        font-size: 0.6rem; 
+    }
+    
+    /* 5. Adjust Impact Metrics for narrow screens */
+    .impact-card {
+        padding: 1rem;
+    }
+    
+    .impact-card .metric {
+        font-size: 2rem; /* Slightly smaller numbers so they don't break lines */
+    }
+}
+
+
+
+
+
