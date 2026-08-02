@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
+    <title>Massive Construction File Management with Amazon S3 & Salesforce | AMDG Development</title>
+    <meta name="description" content="Decouple heavy construction file storage from CRM data management using an integrated Amazon S3 and Salesforce cloud architecture to deliver seamless asset access.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../../assets/icons/amdg-logo.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets in Strict Cascade Order -->
+    <link rel="stylesheet" href="../../css/normalize.css">
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+    <link rel="stylesheet" href="../../css/mega-menu.css">
+    <link rel="stylesheet" href="../../css/mobile-menu.css">
+    <link rel="stylesheet" href="../../css/solution-template.css">
+
+    <!-- Scripts -->
+    <script src="../../js/main.js" defer></script>
+    <script src="../../js/mobile-drawer.js" defer></script>
+    <script src="../../js/mega-menu.js" defer></script>
+    <script src="../../js/animations.js" defer></script>
+</head>
+
+<body>
+
+    <!-- =========================================================
+         GLOBAL HEADER & NAVIGATION (Sticky)
+         ========================================================= -->
+    <header class="sticky-nav">
+        <div class="nav-container">
+            <div class="brand">
+                <a href="../../index.html">
+                    <img src="../../assets/icons/amdg-logo.png" alt="AMDG Development" class="logo-img">
+                </a>
+            </div>
+
+            <nav class="desktop-nav-only">
+                <ul class="nav-links">
+                    <li class="dropdown-trigger">
+                        <a href="../../platform/index.html">Platform</a>
+                    </li>
+                    
+                    <li class="dropdown-trigger mega-menu-trigger">
+                        <a href="#">Solutions</a>
+                        <div class="mega-menu grid-5-col">
+                            <div class="mega-col">
+                                <h4>1. Pre-Construction</h4>
+                                <a href="../../solutions/pre-construction/ai-bid-parsing.html">AI Bid Parsing</a>
+                                <a href="../../solutions/pre-construction/predictive-cost-estimation.html">Predictive Cost Est.</a>
+                                <a href="../../solutions/pre-construction/massive-file-management.html">Massive File Mgmt.</a>
+                                <a href="../../solutions/pre-construction/automated-subcontractor-onboarding.html">Sub Onboarding</a>
+                            </div>
+                            <div class="mega-col">
+                                <h4>2. Active Site Ops</h4>
+                                <a href="../../solutions/active-site/heavy-machinery-predictive-maintenance.html">Machine Maint.</a>
+                                <a href="../../solutions/active-site/computer-vision-site-safety.html">Computer Vision</a>
+                                <a href="../../solutions/active-site/digital-twin-monitoring.html">Digital Twins</a>
+                                <a href="../../solutions/active-site/smart-supply-chain-tracking.html">Supply Tracking</a>
+                                <a href="../../solutions/active-site/weather-responsive-scheduling.html">Weather Scheduling</a>
+                                <a href="../../solutions/active-site/wearable-worker-safety.html">Wearable Safety</a>
+                            </div>
+                            <div class="mega-col">
+                                <h4>3. Project Management</h4>
+                                <a href="../../solutions/project-management/unified-client-command-center.html">Client Command Center</a>
+                                <a href="../../solutions/project-management/intelligent-contact-center.html">Cloud Contact Center</a>
+                                <a href="../../solutions/project-management/generative-ai-risk-flagging.html">GenAI Risk Flagging</a>
+                                <a href="../../solutions/project-management/automated-daily-site-logs.html">Voice Daily Logs</a>
+                            </div>
+                            <div class="mega-col">
+                                <h4>4. Post-Construction</h4>
+                                <a href="../../solutions/post-construction/smart-building-handoff.html">Smart Handoff</a>
+                                <a href="../../solutions/post-construction/automated-warranty-triage.html">Warranty Triage</a>
+                                <a href="../../solutions/post-construction/esg-sustainability-tracking.html">ESG Tracking</a>
+                            </div>
+                            <div class="mega-col">
+                                <h4>5. Enterprise IT</h4>
+                                <a href="../../solutions/enterprise-it/single-source-of-truth.html">Single Source of Truth</a>
+                                <a href="../../solutions/enterprise-it/agile-field-apps.html">Offline Mobile Apps</a>
+                                <a href="../../solutions/enterprise-it/automated-lien-waiver-processing.html">Lien Waiver Parsing</a>
+                                <a href="../../solutions/enterprise-it/disaster-recovery-archiving.html">Compliance Archiving</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="dropdown-trigger">
+                        <a href="../../outcomes/index.html">Outcomes</a>
+                    </li>
+                    <li class="dropdown-trigger">
+                        <a href="../../roadmap/index.html">Roadmap</a>
+                    </li>
+                    <li class="dropdown-trigger">
+                        <a href="../../about/index.html">About Us</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="nav-cta">
+                <a href="../../contact/get-a-demo.html" class="btn-primary desktop-nav-only">[ Get a Demo ]</a>
+                <a href="../../contact/get-a-demo.html" class="btn-primary-mini mobile-drawer-only">Demo</a>
+                
+                <button class="hamburger-btn mobile-drawer-only" aria-label="Open menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- =========================================================
+         MOBILE OFF-CANVAS DRAWER
+         ========================================================= -->
+    <nav class="mobile-drawer overlay-solid-bg" aria-hidden="true">
+        <div class="drawer-header">
+            <span class="brand-text">Menu</span>
+            <button class="close-drawer-btn" aria-label="Close menu">&times;</button>
+        </div>
+        <div class="drawer-content">
+            <a href="../../platform/index.html" class="drawer-link">Platform</a>
+            
+            <div class="accordion">
+                <button class="accordion-header" aria-expanded="false">Solutions (21 Services) <span class="icon-plus"></span></button>
+                <div class="accordion-body">
+                    <div class="phase-group">
+                        <h5>Phase 1: Pre-Construction</h5>
+                        <a href="../../solutions/pre-construction/ai-bid-parsing.html">AI Bid Parsing</a>
+                        <a href="../../solutions/pre-construction/predictive-cost-estimation.html">Predictive Cost Estimation</a>
+                        <a href="../../solutions/pre-construction/massive-file-management.html">Massive File Management</a>
+                    </div>
+                    <div class="phase-group">
+                        <h5>Phase 2: Active Site Ops</h5>
+                        <a href="../../solutions/active-site/wearable-worker-safety.html">Wearable Worker Safety</a>
+                    </div>
+                </div>
+            </div>
+
+            <a href="../../outcomes/index.html" class="drawer-link">Outcomes</a>
+            <a href="../../roadmap/index.html" class="drawer-link">Implementation Roadmap</a>
+            <a href="../../about/index.html" class="drawer-link">About Us</a>
+            
+            <div class="drawer-footer mobile-bottom-cta">
+                <a href="../../contact/get-a-demo.html" class="btn-primary full-width">Speak to an Architect</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- =========================================================
+         MAIN CONTENT
+         ========================================================= -->
+    <main>
+        
+        <!-- Solution Header Section -->
+        <section class="solution-header dark-texture-bg text-white">
+            <div class="container">
+                <nav class="breadcrumb">
+                    <a href="../../index.html">Home</a> &gt; 
+                    <a href="../../index.html#blueprint-matrix">Phase 1: Pre-Construction</a> &gt; 
+                    <span>Massive File Management</span>
+                </nav>
+
+                <div class="tech-badge-container">
+                    <span class="tech-badge">Amazon S3</span>
+                    <span class="tech-badge">Salesforce</span>
+                    <span class="tech-badge">AWS Lambda</span>
+                </div>
+
+                <h1 class="fluid-h1">Taming the Data Avalanche: Massive Construction File Management with Amazon S3 and Salesforce</h1>
+                
+                <p class="hero-subtext fluid-h2-sub">
+                    Decoupling heavy file storage from CRM data management using an integrated cloud architecture to deliver seamless asset access without breaking the budget.
+                </p>
+            </div>
+        </section>
+
+        <!-- Solution Body Content & Sidebar Grid -->
+        <section class="container solution-body-grid">
+            <div class="solution-main-column">
+                
+                <!-- Overview -->
+                <article class="content-block">
+                    <p class="lead-paragraph">
+                        Modern commercial construction runs on rich media. From multi-gigabyte BIM (Building Information Modeling) models and high-resolution CAD schematics to 4K site drone flyovers and high-definition progress photography, project teams generate vast amounts of unstructured data daily.
+                    </p>
+                    <p>
+                        However, storing and sharing these massive assets presents a major IT challenge. When contractors attempt to manage heavy construction files directly within enterprise CRMs like Salesforce, they quickly face severe file size limits, skyrocketing storage upgrade fees, and frustrated field personnel waiting minutes for drawings to load over cellular networks.
+                    </p>
+                    <p>
+                        To deliver seamless asset access without breaking the budget, leading contractors decouple heavy file storage from CRM data management using an integrated cloud architecture.
+                    </p>
+                </article>
+
+                <hr class="section-divider">
+
+                <!-- The Problem -->
+                <article class="content-block">
+                    <h2>The Problem: High Storage Costs, File Bloat, & Siloed Site Assets</h2>
+                    <p>
+                        Field superintendents, project managers, and subcontractors need instant access to up-to-date drawings and site photos on their mobile devices. Yet, traditional document management methods create three distinct operational bottlenecks:
+                    </p>
+                    
+                    <div class="callout-box">
+                        <h3>Three Operational Bottlenecks:</h3>
+                        <ol>
+                            <li><strong>Exorbitant Storage Costs:</strong> Storing terabytes of heavy project files directly within native Salesforce storage becomes prohibitively expensive at scale.</li>
+                            <li><strong>Strict File Upload Restrictions:</strong> Standard CRM attachment limits prevent teams from uploading complete 3D BIM models, high-density point clouds, or raw 4K video footage captured by site inspection drones.</li>
+                            <li><strong>Data Fragmentation & Version Confusion:</strong> When field teams resort to unauthorized consumer file-sharing platforms to bypass size limits, assets become fragmented. Project managers lose visibility into which revision is stored where, leading to costly rework caused by working off outdated drawings.</li>
+                        </ol>
+                    </div>
+                </article>
+
+                <hr class="section-divider">
+
+                <!-- The Solution & Architecture -->
+                <article class="content-block">
+                    <h2>The Solution: Seamless Offloading via Amazon S3 & Salesforce Integration</h2>
+                    <p>
+                        By pairing <strong>Amazon Simple Storage Service (Amazon S3)</strong> with <strong>Salesforce</strong>, construction businesses establish a zero-friction storage ecosystem. Salesforce manages the business logic, project relationships, and access permissions, while Amazon S3 handles the heavy lifting of enterprise file storage behind the scenes.
+                    </p>
+
+                    <!-- Blueprint Architecture Visual Block -->
+                    <div class="architecture-diagram-wrapper">
+                        <div class="diagram-header-bar">
+                            <span>ARCHITECTURE BLUEPRINT: MASSIVE FILE PIPELINE</span>
+                            <span>SYS-REF: AWS-SF-03</span>
+                        </div>
+                        <pre class="diagram-ascii">
+Field Apps / Drones / Cameras / Web Portals
+                     │
+                     ▼
+       Salesforce File Upload Interface
+                     │
+                     ▼
+         AWS Lambda Direct-to-S3 Pipeline
+                     │
+         ┌────────────┴────────────┐
+         ▼                         ▼
+    Amazon S3                 Salesforce Record
+(Heavy File Storage)       (Lightweight Link/Preview)
+                        </pre>
+                    </div>
+
+                    <h3>How the Architecture Works</h3>
+                    <ol class="data-flow-list">
+                        <li>
+                            <strong>Direct-to-S3 Multipart Uploads:</strong> Field workers, drone operators, and project engineers upload assets directly through custom Salesforce interfaces or mobile components. A lightweight AWS Lambda service immediately intercepts the upload, streaming the raw file directly into an enterprise Amazon S3 bucket.
+                        </li>
+                        <li>
+                            <strong>Zero Storage Footprint in Salesforce:</strong> Instead of storing the heavy binary file inside Salesforce, the system generates a secure, lightweight reference link mapped directly to the corresponding Salesforce record (e.g., <em>Opportunity</em>, <em>Project</em>, <em>Site Inspection</em>, or <em>RFI</em>).
+                        </li>
+                        <li>
+                            <strong>High-Performance In-App Previews:</strong> Field personnel can render high-resolution previews, pan across 2D drawings, or stream 4K drone updates directly from the Salesforce Mobile App or Salesforce Experience Cloud portal without downloading multi-gigabyte files to their devices.
+                        </li>
+                        <li>
+                            <strong>Automated Lifecycle & Cold Storage Routing:</strong> Configurable Amazon S3 Lifecycle policies automatically transition active project files to low-cost storage tiers (such as Amazon S3 Glacier Flexible Retrieval) once a project transitions to the post-construction or warranty phase.
+                        </li>
+                    </ol>
+                </article>
+
+                <hr class="section-divider">
+
+                <!-- Impact & Results Grid -->
+                <article class="content-block">
+                    <h2>Business Impact & Results</h2>
+                    <p>Integrating cloud-native storage directly into your CRM workflow eliminates storage bloat while empowering teams with instant visual intelligence:</p>
+
+                    <div class="impact-grid">
+                        <div class="impact-card">
+                            <span class="metric">90%</span>
+                            <h4>Storage Overhead Reduction</h4>
+                            <p>Moving gigabytes of unstructured media to Amazon S3 drastically lowers cloud storage expenses compared to native CRM storage add-ons.</p>
+                        </div>
+                        <div class="impact-card">
+                            <span class="metric">Instant</span>
+                            <h4>Field Accessibility</h4>
+                            <p>Optimized content delivery through AWS ensures that field teams can open critical drawings and site photos in seconds—even on low-bandwidth networks.</p>
+                        </div>
+                        <div class="impact-card">
+                            <span class="metric">Unified</span>
+                            <h4>Single-Source-of-Truth</h4>
+                            <p>Every photo, video, and design revision is bound directly to its parent project record in Salesforce, eliminating version confusion and audit trail gaps.</p>
+                        </div>
+                        <div class="impact-card">
+                            <span class="metric">Infinite</span>
+                            <h4>File Size Handling</h4>
+                            <p>Project teams can upload raw drone footage, point-cloud scans, and complete BIM packages without encountering standard CRM size-limit errors.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <hr class="section-divider">
+
+                <!-- Implementation Support -->
+                <article class="content-block">
+                    <h2>Why Partner with Us for Implementation?</h2>
+                    <p>
+                        Connecting high-capacity cloud storage to enterprise CRMs requires fine-tuned security, performance optimization, and intuitive UI design.
+                    </p>
+                    <p>Our complete end-to-end integration services cover:</p>
+                    <ul>
+                        <li><strong>Custom Salesforce UI Components:</strong> Building native Lightning Web Components (LWCs) that allow drag-and-drop file uploads and seamless inline media previews within Salesforce records.</li>
+                        <li><strong>Pre-Signed URL & Security Architecture:</strong> Implementing secure, time-limited Amazon S3 pre-signed URLs to ensure that project files remain strictly protected while remaining accessible to authorized team members and clients.</li>
+                        <li><strong>Automated Metadata Tagging:</strong> Configuring automated AWS serverless pipelines that read incoming files, extract GPS coordinates and timestamps, and automatically tag assets to the correct Salesforce project record.</li>
+                    </ul>
+                </article>
+
+            </div>
+
+            <!-- Sticky Sidebar Column -->
+            <aside class="solution-sidebar">
+                <div class="sidebar-card highlight-card">
+                    <h3>Deploy This Architecture</h3>
+                    <p>Schedule a blueprint consultation with our cloud engineers to evaluate your file storage pipelines.</p>
+                    <a href="../../contact/get-a-demo.html" class="btn-primary high-vis-accent full-width text-center">Initiate Consultation</a>
+                </div>
+
+                <div class="sidebar-card">
+                    <h4>Phase 1 Solutions</h4>
+                    <ul class="sidebar-links">
+                        <li><a href="ai-bid-parsing.html">01. AI Bid Parsing</a></li>
+                        <li><a href="predictive-cost-estimation.html">02. Predictive Cost Est.</a></li>
+                        <li><a href="massive-file-management.html" class="active">03. Massive File Mgmt.</a></li>
+                        <li><a href="automated-subcontractor-onboarding.html">04. Sub Onboarding</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </section>
+
+    </main>
+
+    <!-- =========================================================
+         GLOBAL FOOTER
+         ========================================================= -->
+    <footer class="global-footer bg-blueprint-navy text-white">
+        <div class="container grid-5-col">
+            <div class="footer-brand footer-col-span-2">
+                <img src="../../assets/icons/amdg-logo-white.svg" alt="AMDG Development" class="footer-logo">
+                <p>Constructing the digital nervous system for commercial general contractors, heavy civil builders, and enterprise real estate developers.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Platform</h4>
+                <ul>
+                    <li><a href="../../platform/ecosystem.html">AWS + Salesforce</a></li>
+                    <li><a href="../../platform/security-compliance.html">Security &amp; Compliance</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="../../about/integration-architects.html">Leadership</a></li>
+                    <li><a href="../../about/careers.html">Careers</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="../../contact/get-a-demo.html">Get a Demo</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 AMDG Development. Proprietary and confidential. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
