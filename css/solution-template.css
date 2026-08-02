@@ -1,148 +1,242 @@
 /* =========================================================
-   SOLUTION TEMPLATE (Individual Service Pages)
+   SOLUTION TEMPLATE - LAYOUT & SPACING FIXES
    ========================================================= */
 
-/* Solution Hero Section */
-.solution-hero {
-    background-color: var(--clr-blueprint-navy);
-    color: var(--clr-white);
-    padding: var(--spacing-xl) 0 var(--spacing-lg);
+/* 1. The Hero / Header Section */
+.solution-header {
+    /* Adjusted padding to frame the text nicely */
+    padding: calc(var(--spacing-xxl) * 1.2) 0 var(--spacing-xxl);
+    
+    /* Added a relevant free Unsplash image with a dark readable overlay */
+    background-image: 
+        linear-gradient(rgba(13, 30, 56, 0.85), rgba(13, 30, 56, 0.95)), 
+        url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2000&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Gives a premium slight parallax effect */
     border-bottom: 4px solid var(--clr-high-vis-orange);
 }
 
-.solution-breadcrumbs {
-    font-family: var(--font-mono);
+.solution-header .breadcrumb {
+    margin-bottom: var(--spacing-md);
     font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: var(--spacing-sm);
-    color: var(--clr-concrete-dark);
+    color: var(--clr-concrete-gray);
 }
 
-.solution-breadcrumbs a {
+.solution-header .breadcrumb a {
     color: var(--clr-high-vis-orange);
+    text-decoration: none;
 }
 
-.solution-breadcrumbs a:hover {
-    text-decoration: underline;
-}
-
-/* Tech Stack Badges (AWS / Salesforce / IoT) */
-.tech-stack-tags {
+.tech-badge-container {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin: var(--spacing-sm) 0 var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
 }
 
-.tech-tag {
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    background-color: rgba(255, 255, 255, 0.1);
+.tech-badge {
+    background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 0.25rem 0.75rem;
     border-radius: 4px;
-    color: var(--clr-white);
+    font-size: 0.75rem;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
 }
 
-.tech-tag.aws {
-    border-left: 3px solid #FF9900; /* AWS Orange */
+.hero-subtext {
+    max-width: 800px;
+    margin-top: var(--spacing-md);
+    color: var(--clr-concrete-gray);
+    line-height: 1.6;
 }
 
-.tech-tag.salesforce {
-    border-left: 3px solid #00A1E0; /* Salesforce Blue */
-}
-
-/* Architecture Layout Grid */
-.architecture-section {
+/* 2. Main Body Grid Layout */
+.solution-body-grid {
     padding: var(--spacing-xl) 0;
-    background-color: var(--clr-concrete-gray);
-}
-
-.architecture-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--spacing-lg);
-    align-items: center;
+    gap: var(--spacing-xl);
+    align-items: start;
 }
 
-@media (min-width: 1024px) {
-    .architecture-grid {
-        grid-template-columns: 1fr 1fr;
+/* Desktop: 2-Column Layout (Main Content + Sidebar) */
+@media (min-width: 992px) {
+    .solution-body-grid {
+        grid-template-columns: 1fr 340px; 
+        gap: 3rem;
     }
 }
 
+/* 3. Content Blocks (Whitepaper Card Style) */
+.content-block {
+    background-color: var(--clr-white);
+    padding: var(--spacing-lg);
+    border-radius: 8px;
+    border: 1px solid var(--clr-concrete-dark);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    margin-bottom: var(--spacing-lg);
+}
+
+.content-block h2 {
+    margin-top: 0;
+    color: var(--clr-blueprint-navy);
+    border-bottom: 2px solid var(--clr-concrete-gray);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.content-block p {
+    margin-bottom: 1.25rem;
+}
+
+.content-block ul, .content-block ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.content-block li {
+    margin-bottom: 0.5rem;
+}
+
+.section-divider {
+    display: none; /* Hidden because we are using card blocks now, looks cleaner without */
+}
+
+/* 4. Callouts & Architecture Diagram */
+.callout-box {
+    background-color: rgba(230, 81, 0, 0.05); /* Very light orange tint */
+    border-left: 4px solid var(--clr-high-vis-orange);
+    padding: var(--spacing-md);
+    margin-top: var(--spacing-md);
+    border-radius: 0 8px 8px 0;
+}
+
 .architecture-diagram-wrapper {
-    background: var(--clr-white);
+    background-color: var(--clr-blueprint-navy);
+    color: var(--clr-white);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    overflow-x: auto; /* Fixes mobile overflow breaking the screen */
+    margin: var(--spacing-lg) 0;
+    border: 1px solid var(--clr-concrete-dark);
+}
+
+.diagram-header-bar {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--clr-high-vis-orange);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.diagram-ascii {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* 5. Impact Metrics Grid */
+.impact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+@media (min-width: 600px) {
+    .impact-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.impact-card {
+    background-color: var(--clr-concrete-gray);
+    padding: var(--spacing-md);
+    border-radius: 6px;
+    border: 1px solid var(--clr-concrete-dark);
+    border-top: 4px solid var(--clr-high-vis-orange);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.impact-card .metric {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--clr-blueprint-navy);
+    margin-bottom: 0.25rem;
+}
+
+.impact-card h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.impact-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--clr-text-muted);
+}
+
+/* 6. Sidebar Styling */
+.sidebar-card {
+    background-color: var(--clr-white);
     padding: var(--spacing-md);
     border-radius: 8px;
     border: 1px solid var(--clr-concrete-dark);
-    box-shadow: 0 10px 30px rgba(11, 27, 61, 0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    margin-bottom: var(--spacing-lg);
 }
 
-.architecture-diagram-wrapper img,
-.architecture-diagram-wrapper svg {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* Data Flow / Step-by-Step Lists */
-.data-flow-list {
-    list-style: none;
-    counter-reset: flow-counter;
-}
-
-.data-flow-list li {
-    position: relative;
-    padding-left: 3.5rem;
-    margin-bottom: var(--spacing-md);
-}
-
-.data-flow-list li::before {
-    counter-increment: flow-counter;
-    content: counter(flow-counter);
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 2.5rem;
-    height: 2.5rem;
-    background-color: var(--clr-blueprint-navy-light);
+.sidebar-card.highlight-card {
+    background-color: var(--clr-blueprint-navy);
     color: var(--clr-white);
-    font-family: var(--font-mono);
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
+    border: none;
+    border-top: 4px solid var(--clr-high-vis-orange);
 }
 
-.data-flow-list h4 {
-    margin-bottom: 0.25rem;
+.sidebar-card.highlight-card h3 {
+    color: var(--clr-white);
+    margin-top: 0;
+}
+
+.sidebar-card h4 {
+    margin-top: 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--clr-concrete-gray);
+}
+
+.sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-links li {
+    margin-bottom: 0.5rem;
+}
+
+.sidebar-links a {
+    text-decoration: none;
+    color: var(--clr-text-main);
+    display: block;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.sidebar-links a:hover {
+    background-color: var(--clr-concrete-gray);
     color: var(--clr-blueprint-navy);
 }
 
-.data-flow-list p {
-    color: var(--clr-text-muted);
-    font-size: 0.95rem;
-}
-
-/* Features Grid */
-.solution-features {
-    padding: var(--spacing-xl) 0;
-}
-
-.feature-card {
-    padding: var(--spacing-md);
-    border-left: 4px solid var(--clr-concrete-dark);
-    transition: border-color 0.3s ease;
-}
-
-.feature-card:hover {
-    border-left-color: var(--clr-high-vis-orange);
-}
-
-.feature-card h4 {
-    font-size: 1.125rem;
-    margin-bottom: 0.5rem;
+.sidebar-links a.active {
+    background-color: rgba(230, 81, 0, 0.1);
+    color: var(--clr-high-vis-orange);
+    font-weight: 600;
 }
