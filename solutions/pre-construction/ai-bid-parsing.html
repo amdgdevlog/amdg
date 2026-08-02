@@ -2,414 +2,399 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Eliminate pre-construction bottlenecks by automating RFP and blueprint parsing using AWS Textract and Salesforce Sales Cloud. Accelerate bid intake and eliminate manual data entry errors.">
-    <meta name="keywords" content="AWS Textract, Salesforce Sales Cloud, Construction Technology, Pre-construction, Intelligent Document Processing, RFP Parsing, Blueprint Analysis, Automation">
-    <title>Eliminating Pre-Construction Bottlenecks: AI-Powered RFP & Blueprint Parsing | AMDG Development</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     
-    <!-- CSS Dependencies -->
+    <title>AI-Powered RFP & Blueprint Parsing | AMDG Development</title>
+    <meta name="description" content="Unifying AWS Textract and Salesforce Sales Cloud to parse 300+ page RFPs and complex blueprint schedules into structured CRM opportunities automatically.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../../assets/icons/amdg-logo.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets in Strict Cascade Order -->
     <link rel="stylesheet" href="../../css/normalize.css">
     <link rel="stylesheet" href="../../css/global.css">
     <link rel="stylesheet" href="../../css/responsive.css">
     <link rel="stylesheet" href="../../css/mega-menu.css">
     <link rel="stylesheet" href="../../css/mobile-menu.css">
     <link rel="stylesheet" href="../../css/solution-template.css">
-    <link rel="stylesheet" href="../../css/timeline.css">
-</head>
-<body class="solution-article-page">
 
-    <!-- HEADER / NAVIGATION -->
-    <header class="site-header">
-        <div class="layout-center header-inner">
-            <a href="../../index.html" class="brand-logo" aria-label="AMDG Development Home">
-                <span class="logo-mark">AMDG</span>
-                <span class="logo-text">DEVELOPMENT</span>
-            </a>
-            
-            <nav class="desktop-nav" aria-label="Main Navigation">
-                <ul class="nav-list">
-                    <li><a href="../../index.html" class="nav-link">Home</a></li>
-                    <li class="has-mega-menu">
-                        <a href="../../#solutions" class="nav-link active">Solutions <span class="dropdown-arrow">▼</span></a>
-                        <!-- Mega Menu Container (Included via global JS/CSS system) -->
+    <!-- Scripts -->
+    <script src="../../js/main.js" defer></script>
+    <script src="../../js/mobile-drawer.js" defer></script>
+    <script src="../../js/mega-menu.js" defer></script>
+    <script src="../../js/animations.js" defer></script>
+</head>
+
+<body>
+
+    <!-- =========================================================
+         GLOBAL HEADER & NAVIGATION (Sticky)
+         ========================================================= -->
+    <header class="sticky-nav">
+        <div class="nav-container">
+            <div class="brand">
+                <a href="../../index.html">
+                    <img src="../../assets/icons/amdg-logo.png" alt="AMDG Development" class="logo-img">
+                </a>
+            </div>
+
+            <nav class="desktop-nav-only">
+                <ul class="nav-links">
+                    <li class="dropdown-trigger">
+                        <a href="../../platform/index.html">Platform</a>
                     </li>
-                    <li><a href="../../#pillars" class="nav-link">Pillars</a></li>
-                    <li><a href="../../#about" class="nav-link">About</a></li>
-                    <li><a href="../../#contact" class="nav-link btn btn-primary">Contact Us</a></li>
+                    
+                    <li class="dropdown-trigger mega-menu-trigger">
+                        <a href="#">Solutions</a>
+                        <div class="mega-menu grid-5-col">
+                            <div class="mega-col">
+                                <h4>1. Pre-Construction</h4>
+                                <a href="../../solutions/pre-construction/ai-bid-parsing.html">AI Bid Parsing</a>
+                                <a href="../../solutions/pre-construction/predictive-cost-estimation.html">Predictive Cost Est.</a>
+                                <a href="../../solutions/pre-construction/massive-file-management.html">Massive File Mgmt.</a>
+                                <a href="../../solutions/pre-construction/automated-subcontractor-onboarding.html">Sub Onboarding</a>
+                            </div>
+                            <div class="mega-col">
+                                <h4>2. Active Site Ops</h4>
+                                <a href="../../solutions/active-site/heavy-machinery-predictive-maintenance.html">Machine Maint.</a>
+                                <a href="../../solutions/active-site/computer-vision-site-safety.html">Computer Vision</a>
+                                <a href="../../solutions/active-site/digital-twin-monitoring.html">Digital Twins</a>
+                                <a href="../../solutions/active-site/smart-supply-chain-tracking.html">Supply Tracking</a>
+                                <a href="../../solutions/active-site/weather-responsive-scheduling.html">Weather Scheduling</a>
+                                <a href="../../solutions/active-site/wearable-worker-safety.html">Wearable Safety</a>
+                            </div>
+                            <div class="mega-col">
+                                <h4>3. Project Management</h4>
+                                <a href="../../solutions/project-management/unified-client-command-center.html">Client Command Center</a>
+                                <a href="../../solutions/project-management/intelligent-contact-center.html">Cloud Contact Center</a>
+                                <a href="../../solutions/project-management/generative-ai-risk-flagging.html">GenAI Risk Flagging</a>
+                                <a href="../../solutions/project-management/automated-daily-site-logs.html">Voice Daily Logs</a>
+                            </div>
+                            <div class="mega-col">
+                                <h4>4. Post-Construction</h4>
+                                <a href="../../solutions/post-construction/smart-building-handoff.html">Smart Handoff</a>
+                                <a href="../../solutions/post-construction/automated-warranty-triage.html">Warranty Triage</a>
+                                <a href="../../solutions/post-construction/esg-sustainability-tracking.html">ESG Tracking</a>
+                            </div>
+                            <div class="mega-col">
+                                <h4>5. Enterprise IT</h4>
+                                <a href="../../solutions/enterprise-it/single-source-of-truth.html">Single Source of Truth</a>
+                                <a href="../../solutions/enterprise-it/agile-field-apps.html">Offline Mobile Apps</a>
+                                <a href="../../solutions/enterprise-it/automated-lien-waiver-processing.html">Lien Waiver Parsing</a>
+                                <a href="../../solutions/enterprise-it/disaster-recovery-archiving.html">Compliance Archiving</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="dropdown-trigger">
+                        <a href="../../outcomes/index.html">Outcomes</a>
+                    </li>
+                    <li class="dropdown-trigger">
+                        <a href="../../roadmap/index.html">Roadmap</a>
+                    </li>
+                    <li class="dropdown-trigger">
+                        <a href="../../about/index.html">About Us</a>
+                    </li>
                 </ul>
             </nav>
 
-            <button class="mobile-menu-toggle" aria-label="Toggle navigation drawer" aria-expanded="false">
-                <span class="hamburger-bar"></span>
-                <span class="hamburger-bar"></span>
-                <span class="hamburger-bar"></span>
-            </button>
+            <div class="nav-cta">
+                <a href="../../contact/get-a-demo.html" class="btn-primary desktop-nav-only">[ Get a Demo ]</a>
+                <a href="../../contact/get-a-demo.html" class="btn-primary-mini mobile-drawer-only">Demo</a>
+                
+                <button class="hamburger-btn mobile-drawer-only" aria-label="Open menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
         </div>
     </header>
 
-    <main id="main-content">
-        <!-- BREADCRUMB / HERO SECTION -->
-        <section class="solution-hero">
-            <div class="layout-center">
-                <nav class="breadcrumb-nav" aria-label="Breadcrumb">
-                    <ol class="breadcrumb-list">
-                        <li><a href="../../index.html">Home</a></li>
-                        <li><a href="../../index.html#blueprint-matrix">Blueprint Matrix</a></li>
-                        <li><a href="../../#">Pre-Construction &amp; Estimating</a></li>
-                        <li aria-current="page">AI RFP &amp; Blueprint Parsing</li>
-                    </ol>
-                </nav>
-
-                <div class="solution-hero-content">
-                    <div class="meta-pill-group">
-                        <span class="meta-pill phase-pill">Phase 01: Pre-Construction</span>
-                        <span class="meta-pill tech-pill">AWS Textract + Salesforce</span>
+    <!-- =========================================================
+         MOBILE OFF-CANVAS DRAWER
+         ========================================================= -->
+    <nav class="mobile-drawer overlay-solid-bg" aria-hidden="true">
+        <div class="drawer-header">
+            <span class="brand-text">Menu</span>
+            <button class="close-drawer-btn" aria-label="Close menu">&times;</button>
+        </div>
+        <div class="drawer-content">
+            <a href="../../platform/index.html" class="drawer-link">Platform</a>
+            
+            <div class="accordion">
+                <button class="accordion-header" aria-expanded="false">Solutions (21 Services) <span class="icon-plus"></span></button>
+                <div class="accordion-body">
+                    <div class="phase-group">
+                        <h5>Phase 1: Pre-Construction</h5>
+                        <a href="../../solutions/pre-construction/ai-bid-parsing.html">AI Bid Parsing</a>
+                        <a href="../../solutions/pre-construction/predictive-cost-estimation.html">Predictive Cost Estimation</a>
                     </div>
-                    
-                    <h1 class="solution-title">Eliminating Pre-Construction Bottlenecks: AI-Powered RFP &amp; Blueprint Parsing with AWS and Salesforce</h1>
-                    
-                    <p class="solution-subtitle">
-                        Streamline estimation workflows, reduce manual data entry by up to 90%, and accelerate bid response times by transforming unstructured RFPs and drawing schedules into actionable Salesforce intelligence.
-                    </p>
+                    <div class="phase-group">
+                        <h5>Phase 2: Active Site Ops</h5>
+                        <a href="../../solutions/active-site/wearable-worker-safety.html">Wearable Worker Safety</a>
+                    </div>
                 </div>
             </div>
+
+            <a href="../../outcomes/index.html" class="drawer-link">Outcomes</a>
+            <a href="../../roadmap/index.html" class="drawer-link">Implementation Roadmap</a>
+            <a href="../../about/index.html" class="drawer-link">About Us</a>
+            
+            <div class="drawer-footer mobile-bottom-cta">
+                <a href="../../contact/get-a-demo.html" class="btn-primary full-width">Speak to an Architect</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- =========================================================
+         MAIN CONTENT
+         ========================================================= -->
+    <main>
+        
+        <!-- Solution Header Section -->
+        <section class="solution-header dark-texture-bg text-white">
+            <div class="container">
+                <nav class="breadcrumb">
+                    <a href="../../index.html">Home</a> &gt; 
+                    <a href="../../index.html#blueprint-matrix">Phase 1: Pre-Construction</a> &gt; 
+                    <span>AI Bid Parsing</span>
+                </nav>
+
+                <div class="tech-badge-container">
+                    <span class="tech-badge">AWS Textract</span>
+                    <span class="tech-badge">Amazon S3</span>
+                    <span class="tech-badge">Salesforce Sales Cloud</span>
+                </div>
+
+                <h1 class="fluid-h1">Eliminating Pre-Construction Bottlenecks: AI-Powered RFP &amp; Blueprint Parsing</h1>
+                
+                <p class="hero-subtext fluid-h2-sub">
+                    Transforming unstructured PDF specifications and multi-page blueprint schedules into automated, structured Salesforce Opportunities and estimator task queues.
+                </p>
+            </div>
         </section>
 
-        <!-- MAIN ARTICLE BODY CONTAINER -->
-        <section class="solution-body-section">
-            <div class="layout-center solution-grid">
+        <!-- Solution Body Content & Sidebar Grid -->
+        <section class="container solution-body-grid">
+            <div class="solution-main-column">
                 
-                <!-- PRIMARY CONTENT COLUMN -->
-                <article class="solution-main-content">
-                    
-                    <!-- EXECUTIVE OVERVIEW / PROBLEM STATEMENT -->
-                    <div class="content-block">
-                        <p class="lead-text">
-                            In commercial construction, winning profitable work requires speed, precision, and relentless organization during the bidding phase. Yet, estimation and business development teams spend hundreds of hours manually reviewing thousands of pages of Request for Proposals (RFPs), specs documents, and blueprint callouts.
-                        </p>
-                        <p>
-                            When estimators spend up to 40% of their time manually copying scope items, sub-tier requirements, and deadline schedules into tracking spreadsheets, human error is inevitable. Critical submission dates get missed, mandatory compliance clauses are overlooked, and high-value bidding opportunities stall before work even begins.
-                        </p>
-                        <p>
-                            To scale operations, general contractors and heavy specialty subs must modernize how project data moves from complex incoming bid packages into their core CRM and operations pipeline.
-                        </p>
-                    </div>
-
-                    <hr class="section-divider">
-
-                    <!-- THE PROBLEM -->
-                    <div class="content-block">
-                        <h2>The Problem: Unstructured Data Creep &amp; "Copy-Paste" Estimation</h2>
-                        <p>
-                            Every developer, municipality, and prime contractor issues RFPs in completely different formats. A single bid package can contain:
-                        </p>
-                        
-                        <ul class="styled-list highlight-list">
-                            <li><strong>300+ page PDF specifications</strong> mixed with scanned, handwritten addenda.</li>
-                            <li><strong>Complex architectural and structural blueprints</strong> with embedded text tables, finish schedules, and callouts.</li>
-                            <li><strong>Strict legal and safety mandates</strong>, such as MWBE participation targets, liquidated damages clauses, and bonding requirements.</li>
-                        </ul>
-
-                        <p>
-                            Standard Optical Character Recognition (OCR) tools fail here. Traditional OCR merely converts scans into flat text—it cannot recognize that a table on page 142 represents a concrete pour schedule or that a callout on drawing sheet A-301 defines a material requirement.
-                        </p>
-
-                        <div class="callout-box warning-callout">
-                            <h3 class="callout-title">Three Major Operational Risks of Manual Data Entry</h3>
-                            <ol class="numbered-list">
-                                <li>
-                                    <strong>Delayed Bid Response Times:</strong> High-value RFPs sit in email inboxes or S3 buckets waiting for manual triage, drastically shortening the time available for detailed cost estimation.
-                                </li>
-                                <li>
-                                    <strong>Inaccurate Pipeline Visibility:</strong> Sales and operations leadership lack real-time visibility into the total volume, dollar value, and scope mix of active bids in Salesforce Sales Cloud.
-                                </li>
-                                <li>
-                                    <strong>High Bid-Leakage Risk:</strong> Overlooking a hidden clause (e.g., specific insurance minimums or liquidated damages schedules) can eliminate profit margins once the project is awarded.
-                                </li>
-                            </ol>
-                        </div>
-                    </div>
-
-                    <hr class="section-divider">
-
-                    <!-- THE SOLUTION & ARCHITECTURE -->
-                    <div class="content-block">
-                        <h2>The Solution: Intelligent Document Processing via AWS Textract &amp; Salesforce Sales Cloud</h2>
-                        <p>
-                            By uniting <strong>Amazon Web Services (AWS)</strong> machine learning infrastructure with <strong>Salesforce Sales Cloud</strong>, we replace manual data entry with an automated, intelligent document ingestion engine.
-                        </p>
-
-                        <!-- SYSTEM ARCHITECTURE DIAGRAM / BLUEPRINT VISUAL -->
-                        <div class="architecture-diagram-container">
-                            <div class="diagram-header">
-                                <span class="diagram-title">SYSTEM ARCHITECTURE: BID PACKAGE INGESTION PIPELINE</span>
-                                <span class="diagram-code">REF-ARCH-AWS-SF-01</span>
-                            </div>
-                            <div class="diagram-flow">
-                                <div class="diagram-step">
-                                    <div class="step-box source">
-                                        <span class="step-label">Incoming Bid Package</span>
-                                        <span class="step-sub">(RFPs, Blueprints, Addenda)</span>
-                                    </div>
-                                </div>
-                                <div class="diagram-arrow">↓</div>
-                                <div class="diagram-step">
-                                    <div class="step-box storage">
-                                        <span class="step-label">Amazon S3 Document Bucket</span>
-                                        <span class="step-sub">(Secure Encrypted Intake)</span>
-                                    </div>
-                                </div>
-                                <div class="diagram-arrow">↓</div>
-                                <div class="diagram-step">
-                                    <div class="step-box processing">
-                                        <span class="step-label">AWS Textract Processing</span>
-                                        <span class="step-sub">(Tables, Forms, Vision OCR)</span>
-                                    </div>
-                                </div>
-                                <div class="diagram-arrow">↓</div>
-                                <div class="diagram-step">
-                                    <div class="step-box integration">
-                                        <span class="step-label">Salesforce Integration Layer</span>
-                                        <span class="step-sub">(REST API / JSON Parser)</span>
-                                    </div>
-                                </div>
-                                <div class="diagram-arrow">↓</div>
-                                <div class="diagram-split">
-                                    <div class="step-box output">
-                                        <span class="step-label">Auto-Created Opportunity</span>
-                                        <span class="step-sub">+ Requirement Lists</span>
-                                    </div>
-                                    <div class="step-box output">
-                                        <span class="step-label">Key Deadlines &amp; Milestones</span>
-                                        <span class="step-sub">Synced to Estimator Queue</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <h3>How the Architecture Works</h3>
-                        
-                        <div class="process-sequence">
-                            <div class="sequence-item">
-                                <div class="sequence-number">01</div>
-                                <div class="sequence-body">
-                                    <h4>Ingestion &amp; Document Shredding</h4>
-                                    <p>When a new RFP, blueprint set, or scope revision is uploaded to Salesforce or dropped into a designated Amazon S3 bucket, a secure trigger initiates an asynchronous AWS pipeline.</p>
-                                </div>
-                            </div>
-
-                            <div class="sequence-item">
-                                <div class="sequence-number">02</div>
-                                <div class="sequence-body">
-                                    <h4>Structural Extraction via AWS Textract</h4>
-                                    <p>Unlike legacy OCR, <strong>AWS Textract</strong> uses computer vision and machine learning to understand document structure natively extracting:</p>
-                                    <ul>
-                                        <li><strong>Forms &amp; Key-Value Pairs:</strong> Instantly identifies fields like <em>Project Name</em>, <em>Owner</em>, <em>Bid Due Date</em>, <em>Liquidated Damages Rate</em>, and <em>Bonding Requirements</em>.</li>
-                                        <li><strong>Tables &amp; Schedules:</strong> Reads complex tables from spec sheets and drawing schedules (door/window schedules, finish schedules, structural steel requirements) line by line without losing formatting.</li>
-                                        <li><strong>Raw &amp; Handwritten Text:</strong> Handles scanned blueprints, site stampings, and handwritten field addenda.</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="sequence-item">
-                                <div class="sequence-number">03</div>
-                                <div class="sequence-body">
-                                    <h4>Salesforce Field Mapping &amp; Opportunity Creation</h4>
-                                    <p>The extracted JSON payload is parsed and routed directly into Salesforce. The system automatically:</p>
-                                    <ul>
-                                        <li>Creates or updates a <strong>Salesforce Opportunity</strong> record.</li>
-                                        <li>Populates custom object fields for critical project constraints (e.g., <em>Site Location</em>, <em>Square Footage</em>, <em>Bid Security %</em>, <em>Anticipated Start Date</em>).</li>
-                                        <li>Attaches the original high-resolution files stored in Amazon S3 directly to the Salesforce record via secure links, preventing CRM storage bloat.</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="sequence-item">
-                                <div class="sequence-number">04</div>
-                                <div class="sequence-body">
-                                    <h4>Automated Task &amp; Timeline Routing</h4>
-                                    <p>Key submission dates, pre-bid site walk deadlines, and RFI (Request for Information) cutoffs automatically populate Salesforce Tasks and Calendars, assigning them to the designated Chief Estimator or Project Executive.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <hr class="section-divider">
-
-                    <!-- BUSINESS IMPACT & RESULTS -->
-                    <div class="content-block">
-                        <h2>Business Impact &amp; Results</h2>
-                        <p>Implementing AI-Powered Bid Parsing delivers quantifiable returns across pre-construction operations:</p>
-
-                        <div class="metrics-grid">
-                            <div class="metric-card">
-                                <span class="metric-value">90%</span>
-                                <span class="metric-label">Reduction in RFP Intake Time</span>
-                                <p class="metric-desc">Processes incoming bid packages in under 2 minutes, down from 2-4 hours of manual effort.</p>
-                            </div>
-                            <div class="metric-card">
-                                <span class="metric-value">0</span>
-                                <span class="metric-label">Missed Key Deadlines</span>
-                                <p class="metric-desc">Automated task routing enforces strict accountability for pre-bid walks and RFI cutoffs.</p>
-                            </div>
-                            <div class="metric-card">
-                                <span class="metric-value">100%</span>
-                                <span class="metric-label">Data Traceability</span>
-                                <p class="metric-desc">Extracted fields link directly back to exact page, line, or coordinate in source documents.</p>
-                            </div>
-                        </div>
-
-                        <ul class="styled-list feature-list">
-                            <li>
-                                <strong>Faster "Go / No-Go" Decisions:</strong> Executive leadership can evaluate high-level project parameters in Salesforce minutes after an RFP arrives, letting teams decline bad fits early and focus on high-win-rate opportunities.
-                            </li>
-                            <li>
-                                <strong>Enhanced Pipeline Precision:</strong> Eliminate spreadsheet silos with real-time reporting on total active bid volume, trade breakdown, and margin expectations.
-                            </li>
-                        </ul>
-                    </div>
-
-                    <hr class="section-divider">
-
-                    <!-- WHY PARTNER WITH US -->
-                    <div class="content-block">
-                        <h2>Why Partner with Us for Implementation?</h2>
-                        <p>
-                            Integrating cloud-native AI with enterprise CRM requires deep expertise in both cloud architecture and construction workflows. We don't just set up software—we build specialized document processing pipelines tailored to how your estimators actually work.
-                        </p>
-                        <p>Our deployment covers the entire lifecycle:</p>
-
-                        <div class="services-offered-list">
-                            <div class="service-item-card">
-                                <h3>Custom AWS Lambda &amp; API Architecture</h3>
-                                <p>Configuring secure, serverless pipelines built to process multi-gigabyte blueprint sets without performance lags or timeout issues.</p>
-                            </div>
-                            <div class="service-item-card">
-                                <h3>Tailored Salesforce Schema Design</h3>
-                                <p>Building custom objects, fields, and automation flows in Sales Cloud that align with your specific trade and bidding methodology.</p>
-                            </div>
-                            <div class="service-item-card">
-                                <h3>Human-in-the-Loop Validation</h3>
-                                <p>Setting up threshold-based review systems in Salesforce so your team can verify confidence scores on low-legibility historical documents before finalizing.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- AUTHOR / ARTICLE FOOTER CTA -->
-                    <div class="article-cta-card">
-                        <div class="cta-content">
-                            <h3>Ready to Eliminate Your Pre-Construction Bottlenecks?</h3>
-                            <p>Schedule an architecture review with our construction technology engineers to evaluate your current RFP intake process.</p>
-                        </div>
-                        <div class="cta-actions">
-                            <a href="../../#contact" class="btn btn-primary">Book Technical Consultation</a>
-                        </div>
-                    </div>
-
+                <!-- Overview -->
+                <article class="content-block">
+                    <p class="lead-paragraph">
+                        In commercial construction, winning profitable work requires speed, precision, and relentless organization during the bidding phase. Yet, estimation and business development teams spend hundreds of hours manually reviewing thousands of pages of Request for Proposals (RFPs), specs documents, and blueprint callouts.
+                    </p>
+                    <p>
+                        When estimators spend up to 40% of their time manually copying scope items, sub-tier requirements, and deadline schedules into tracking spreadsheets, human error is inevitable. Critical submission dates get missed, mandatory compliance clauses are overlooked, and high-value bidding opportunities stall before work even begins.
+                    </p>
+                    <p>
+                        To scale operations, general contractors and heavy specialty subs must modernize how project data moves from complex incoming bid packages into their core CRM and operations pipeline.
+                    </p>
                 </article>
 
-                <!-- SIDEBAR COLUMN -->
-                <aside class="solution-sidebar">
+                <hr class="section-divider">
+
+                <!-- The Problem -->
+                <article class="content-block">
+                    <h2>The Problem: Unstructured Data Creep &amp; "Copy-Paste" Estimation</h2>
+                    <p>
+                        Every developer, municipality, and prime contractor issues RFPs in completely different formats. A single bid package can contain:
+                    </p>
+                    <ul>
+                        <li><strong>300+ page PDF specifications</strong> mixed with scanned, handwritten addenda.</li>
+                        <li><strong>Complex architectural and structural blueprints</strong> with embedded text tables, finish schedules, and callouts.</li>
+                        <li><strong>Strict legal and safety mandates</strong>, such as MWBE participation targets, liquidated damages clauses, and bonding requirements.</li>
+                    </ul>
                     
-                    <!-- STICKY ACTION WIDGET -->
-                    <div class="sidebar-widget cta-widget">
-                        <h3>Deploy This Solution</h3>
-                        <p>We build turnkey AWS and Salesforce integrations for general and specialty contractors.</p>
-                        <a href="../../#contact" class="btn btn-primary full-width">Talk to a Solution Architect</a>
-                        <a href="../../tel:18005550199" class="phone-link">
-                            <span class="icon">📞</span> Direct Technical Line
-                        </a>
+                    <p>
+                        Standard Optical Character Recognition (OCR) tools fail here. Traditional OCR merely converts scans into flat text—it cannot recognize that a table on page 142 represents a concrete pour schedule or that a callout on drawing sheet A-301 defines a material requirement.
+                    </p>
+
+                    <div class="callout-box">
+                        <h3>Three Primary Operational Risks:</h3>
+                        <ol>
+                            <li><strong>Delayed Bid Response Times:</strong> High-value RFPs sit in email inboxes or S3 buckets waiting for manual triage, drastically shortening the time available for detailed cost estimation.</li>
+                            <li><strong>Inaccurate Pipeline Visibility:</strong> Sales and operations leadership lack real-time visibility into the total volume, dollar value, and scope mix of active bids in Salesforce Sales Cloud.</li>
+                            <li><strong>High Bid-Leakage Risk:</strong> Overlooking a hidden clause (e.g., specific insurance minimums or liquidated damages schedules) can eliminate profit margins once the project is awarded.</li>
+                        </ol>
+                    </div>
+                </article>
+
+                <hr class="section-divider">
+
+                <!-- The Solution & Architecture -->
+                <article class="content-block">
+                    <h2>The Solution: Intelligent Document Processing via AWS Textract &amp; Salesforce Sales Cloud</h2>
+                    <p>
+                        By uniting <strong>Amazon Web Services (AWS)</strong> machine learning infrastructure with <strong>Salesforce Sales Cloud</strong>, we replace manual data entry with an automated, intelligent document ingestion engine.
+                    </p>
+
+                    <!-- Blueprint Architecture Visual Block -->
+                    <div class="architecture-diagram-wrapper">
+                        <div class="diagram-header-bar">
+                            <span>ARCHITECTURE BLUEPRINT: DATA INGESTION FLOW</span>
+                            <span>SYS-REF: AWS-SF-01</span>
+                        </div>
+                        <pre class="diagram-ascii">
+Incoming Bid Package (RFPs, Blueprints, Addenda)
+                       │
+                       ▼
+           Amazon S3 Document Bucket
+                       │
+                       ▼
+         AWS Textract (Tables, Forms, OCR)
+                       │
+                       ▼
+        Salesforce Sales Cloud Integration
+                       │
+        ┌──────────────┴──────────────┐
+        ▼                             ▼
+Auto-Created Opportunity     Key Deadlines &amp; Milestones
+ + Requirement Lists          Synced to Estimator Queue
+                        </pre>
                     </div>
 
-                    <!-- SOLUTION SUMMARY METADATA -->
-                    <div class="sidebar-widget meta-widget">
-                        <h4 class="widget-title">Solution Overview</h4>
-                        <dl class="meta-details-list">
-                            <dt>Primary Stack</dt>
-                            <dd>AWS Textract, S3, Lambda, Salesforce Sales Cloud</dd>
-                            
-                            <dt>Target Roles</dt>
-                            <dd>Chief Estimators, VP of Pre-Construction, BD Directors</dd>
-                            
-                            <dt>Avg. Implementation</dt>
-                            <dd>3 - 5 Weeks</dd>
-                            
-                            <dt>Integrations</dt>
-                            <dd>Procore, SharePoint, Autodesk Construction Cloud</dd>
-                        </dl>
-                    </div>
+                    <h3>How the Architecture Works</h3>
+                    <ol class="data-flow-list">
+                        <li>
+                            <strong>Ingestion &amp; Document Shredding:</strong> When a new RFP, blueprint set, or scope revision is uploaded to Salesforce or dropped into a designated Amazon S3 bucket, a secure trigger initiates an asynchronous AWS pipeline.
+                        </li>
+                        <li>
+                            <strong>Structural Extraction via AWS Textract:</strong> Unlike legacy OCR, <strong>AWS Textract</strong> uses computer vision and machine learning to understand document structure. It natively extracts:
+                            <ul>
+                                <li><strong>Forms &amp; Key-Value Pairs:</strong> Instantly identifies fields like <em>Project Name</em>, <em>Owner</em>, <em>Bid Due Date</em>, <em>Liquidated Damages Rate</em>, and <em>Bonding Requirements</em>.</li>
+                                <li><strong>Tables &amp; Schedules:</strong> Reads complex tables from spec sheets and drawing schedules (door/window schedules, finish schedules, structural steel requirements) line by line without losing formatting.</li>
+                                <li><strong>Raw &amp; Handwritten Text:</strong> Handles scanned blueprints, site stampings, and handwritten field addenda.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Salesforce Field Mapping &amp; Opportunity Creation:</strong> The extracted JSON payload is parsed and routed directly into Salesforce. The system automatically:
+                            <ul>
+                                <li>Creates or updates a <strong>Salesforce Opportunity</strong> record.</li>
+                                <li>Populates custom object fields for critical project constraints (e.g., <em>Site Location</em>, <em>Square Footage</em>, <em>Bid Security %</em>, <em>Anticipated Start Date</em>).</li>
+                                <li>Attaches the original high-resolution files stored in Amazon S3 directly to the Salesforce record via secure links, preventing CRM storage bloat.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Automated Task &amp; Timeline Routing:</strong> Key submission dates, pre-bid site walk deadlines, and RFI (Request for Information) cutoffs automatically populate Salesforce Tasks and Calendars, assigning them to the designated Chief Estimator or Project Executive.
+                        </li>
+                    </ol>
+                </article>
 
-                    <!-- RELATED BLUEPRINT ARTICLES NAV -->
-                    <div class="sidebar-widget nav-widget">
-                        <h4 class="widget-title">Phase 01: Pre-Construction Solutions</h4>
-                        <ul class="sidebar-article-nav">
-                            <li class="active">
-                                <a href="../../article-01.html">
-                                    <span class="nav-num">01.1</span>
-                                    <span class="nav-text">AI RFP &amp; Blueprint Parsing</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="../../#">
-                                    <span class="nav-num">01.2</span>
-                                    <span class="nav-text">Automated Subcontractor Scope Sync</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="../../#">
-                                    <span class="nav-num">01.3</span>
-                                    <span class="nav-text">Historical Estimation Accuracy Tracking</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="../../#">
-                                    <span class="nav-num">01.4</span>
-                                    <span class="nav-text">Procore &amp; Salesforce Bid Portal Bridge</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                <hr class="section-divider">
 
-                </aside>
+                <!-- Impact & Results Grid -->
+                <article class="content-block">
+                    <h2>Business Impact &amp; Results</h2>
+                    <p>Implementing AI-Powered Bid Parsing delivers quantifiable returns across pre-construction operations:</p>
+
+                    <div class="impact-grid">
+                        <div class="impact-card">
+                            <span class="metric">90%</span>
+                            <h4>Reduction in RFP Intake Time</h4>
+                            <p>What previously took 2 to 4 hours of reading and manual entry now takes less than 2 minutes of background processing.</p>
+                        </div>
+                        <div class="impact-card">
+                            <span class="metric">Faster</span>
+                            <h4>"Go / No-Go" Decisions</h4>
+                            <p>Evaluate high-level project parameters in Salesforce minutes after an RFP arrives to focus on high-win-rate opportunities.</p>
+                        </div>
+                        <div class="impact-card">
+                            <span class="metric">Zero</span>
+                            <h4>Missed Deadlines</h4>
+                            <p>Automated task assignment in Salesforce ensures pre-bid visits, RFIs, and addenda are tracked with strict accountability.</p>
+                        </div>
+                        <div class="impact-card">
+                            <span class="metric">100%</span>
+                            <h4>Data Traceability</h4>
+                            <p>Every extracted field links directly back to the exact page or drawing coordinate in the original AWS-stored document.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <hr class="section-divider">
+
+                <!-- Implementation Support -->
+                <article class="content-block">
+                    <h2>Why Partner with Us for Implementation?</h2>
+                    <p>
+                        Integrating cloud-native AI with enterprise CRM requires deep expertise in both cloud architecture and construction workflows. We don't just set up software—we build specialized document processing pipelines tailored to how your estimators actually work.
+                    </p>
+                    <p>Our deployment covers the entire lifecycle:</p>
+                    <ul>
+                        <li><strong>Custom AWS Lambda &amp; API Architecture:</strong> Configuring secure, serverless pipelines built to process multi-gigabyte blueprint sets without performance lags.</li>
+                        <li><strong>Tailored Salesforce Schema Design:</strong> Building custom objects, fields, and automation flows in Sales Cloud that align with your specific trade and bidding methodology.</li>
+                        <li><strong>Human-in-the-Loop Validation:</strong> Setting up threshold-based review systems in Salesforce so your team can verify confidence scores on low-legibility historical documents before finalizing.</li>
+                    </ul>
+                </article>
 
             </div>
+
+            <!-- Sticky Sidebar Column -->
+            <aside class="solution-sidebar">
+                <div class="sidebar-card highlight-card">
+                    <h3>Deploy This Architecture</h3>
+                    <p>Schedule a blueprint consultation with our cloud engineers to evaluate your bidding pipeline.</p>
+                    <a href="../../contact/get-a-demo.html" class="btn-primary high-vis-accent full-width text-center">Initiate Consultation</a>
+                </div>
+
+                <div class="sidebar-card">
+                    <h4>Phase 1 Solutions</h4>
+                    <ul class="sidebar-links">
+                        <li><a href="ai-bid-parsing.html" class="active">01. AI Bid Parsing</a></li>
+                        <li><a href="predictive-cost-estimation.html">02. Predictive Cost Est.</a></li>
+                        <li><a href="massive-file-management.html">03. Massive File Mgmt.</a></li>
+                        <li><a href="automated-subcontractor-onboarding.html">04. Sub Onboarding</a></li>
+                    </ul>
+                </div>
+            </aside>
         </section>
+
     </main>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-        <div class="layout-center footer-inner">
-            <div class="footer-col brand-col">
-                <a href="../../index.html" class="brand-logo footer-logo">
-                    <span class="logo-mark">AMDG</span>
-                    <span class="logo-text">DEVELOPMENT</span>
-                </a>
-                <p class="footer-tagline">Architecting Cloud &amp; CRM Infrastructure for Heavy Construction &amp; Specialty Contractors.</p>
+    <!-- =========================================================
+         GLOBAL FOOTER
+         ========================================================= -->
+    <footer class="global-footer bg-blueprint-navy text-white">
+        <div class="container grid-5-col">
+            <div class="footer-brand footer-col-span-2">
+                <img src="../../assets/icons/amdg-logo-white.svg" alt="AMDG Development" class="footer-logo">
+                <p>Constructing the digital nervous system for commercial general contractors, heavy civil builders, and enterprise real estate developers.</p>
             </div>
             
-            <div class="footer-col links-col">
-                <h4 class="footer-heading">Solutions Matrix</h4>
+            <div class="footer-links">
+                <h4>Platform</h4>
                 <ul>
-                    <li><a href="../../index.html#blueprint-matrix">01. Pre-Construction</a></li>
-                    <li><a href="../../index.html#blueprint-matrix">02. Field Operations</a></li>
-                    <li><a href="../../index.html#blueprint-matrix">03. Project Controls</a></li>
-                    <li><a href="../../index.html#blueprint-matrix">04. Equipment &amp; Assets</a></li>
-                    <li><a href="../../index.html#blueprint-matrix">05. Safety &amp; Compliance</a></li>
+                    <li><a href="../../platform/ecosystem.html">AWS + Salesforce</a></li>
+                    <li><a href="../../platform/security-compliance.html">Security &amp; Compliance</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="../../about/integration-architects.html">Leadership</a></li>
+                    <li><a href="../../about/careers.html">Careers</a></li>
                 </ul>
             </div>
 
-            <div class="footer-col contact-col">
-                <h4 class="footer-heading">Connect</h4>
-                <p>Engineered for High-Contrast Jobsite &amp; Office Operations.</p>
-                <p class="copyright">&copy; 2026 AMDG Development. All rights reserved.</p>
+            <div class="footer-links">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="../../contact/get-a-demo.html">Get a Demo</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
             </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 AMDG Development. Proprietary and confidential. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- JS MODULES -->
-    <script src="../../js/animations.js"></script>
-    <script src="../../js/mega-menu.js"></script>
-    <script src="../../js/mobile-drawer.js"></script>
-    <script src="../../js/main.js"></script>
 </body>
 </html>
