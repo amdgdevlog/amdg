@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
+    <title>Automated Subcontractor Onboarding | AMDG Development</title>
+    <meta name="description" content="Streamlining compliance and subcontractor onboarding with Salesforce Experience Cloud and AWS Lambda to protect jobsite margins and reduce legal liability.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../../assets/icons/amdg-logo.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets in Strict Cascade Order -->
+    <link rel="stylesheet" href="../../css/normalize.css">
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+    <link rel="stylesheet" href="../../css/mega-menu.css">
+    <link rel="stylesheet" href="../../css/mobile-menu.css">
+    <link rel="stylesheet" href="../../css/solution-template.css">
+
+    <!-- Scripts -->
+    <script src="../../js/main.js" defer></script>
+    <script src="../../js/mobile-drawer.js" defer></script>
+    <script src="../../js/mega-menu.js" defer></script>
+    <script src="../../js/animations.js" defer></script>
+</head>
+
+<body>
+
+    <!-- =========================================================
+         GLOBAL HEADER & NAVIGATION (Sticky)
+         ========================================================= -->
+    <header class="sticky-nav">
+        <div class="nav-container">
+            <div class="brand">
+                <a href="../../index.html">
+                    <img src="../../assets/icons/amdg-logo.png" alt="AMDG Development" class="logo-img">
+                </a>
+            </div>
+
+            <nav class="desktop-nav-only">
+                <ul class="nav-links">
+                    <li class="dropdown-trigger">
+                        <a href="../../platform/index.html">Platform</a>
+                    </li>
+                    
+                    <li class="dropdown-trigger mega-menu-trigger">
+                        <a href="#">Solutions</a>
+                        <div class="mega-menu grid-5-col">
+                            <div class="mega-col">
+                                <h4>1. Pre-Construction</h4>
+                                <a href="../../solutions/pre-construction/ai-bid-parsing.html">AI Bid Parsing</a>
+                                <a href="../../solutions/pre-construction/predictive-cost-estimation.html">Predictive Cost Est.</a>
+                                <a href="../../solutions/pre-construction/massive-file-management.html">Massive File Mgmt.</a>
+                                <a href="../../solutions/pre-construction/automated-subcontractor-onboarding.html">Sub Onboarding</a>
+                            </div>
+                            <div class="mega-col">
+                                <h4>2. Active Site Ops</h4>
+                                <a href="../../solutions/active-site/heavy-machinery-predictive-maintenance.html">Machine Maint.</a>
+                                <a href="../../solutions/active-site/computer-vision-site-safety.html">Computer Vision</a>
+                                <a href="../../solutions/active-site/digital-twin-monitoring.html">Digital Twins</a>
+                                <a href="../../solutions/active-site/smart-supply-chain-tracking.html">Supply Tracking</a>
+                                <a href="../../solutions/active-site/weather-responsive-scheduling.html">Weather Scheduling</a>
+                                <a href="../../solutions/active-site/wearable-worker-safety.html">Wearable Safety</a>
+                            </div>
+                            <div class="mega-col">
+                                <h4>3. Project Management</h4>
+                                <a href="../../solutions/project-management/unified-client-command-center.html">Client Command Center</a>
+                                <a href="../../solutions/project-management/intelligent-contact-center.html">Cloud Contact Center</a>
+                                <a href="../../solutions/project-management/generative-ai-risk-flagging.html">GenAI Risk Flagging</a>
+                                <a href="../../solutions/project-management/automated-daily-site-logs.html">Voice Daily Logs</a>
+                            </div>
+                            <div class="mega-col">
+                                <h4>4. Post-Construction</h4>
+                                <a href="../../solutions/post-construction/smart-building-handoff.html">Smart Handoff</a>
+                                <a href="../../solutions/post-construction/automated-warranty-triage.html">Warranty Triage</a>
+                                <a href="../../solutions/post-construction/esg-sustainability-tracking.html">ESG Tracking</a>
+                            </div>
+                            <div class="mega-col">
+                                <h4>5. Enterprise IT</h4>
+                                <a href="../../solutions/enterprise-it/single-source-of-truth.html">Single Source of Truth</a>
+                                <a href="../../solutions/enterprise-it/agile-field-apps.html">Offline Mobile Apps</a>
+                                <a href="../../solutions/enterprise-it/automated-lien-waiver-processing.html">Lien Waiver Parsing</a>
+                                <a href="../../solutions/enterprise-it/disaster-recovery-archiving.html">Compliance Archiving</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="dropdown-trigger">
+                        <a href="../../outcomes/index.html">Outcomes</a>
+                    </li>
+                    <li class="dropdown-trigger">
+                        <a href="../../roadmap/index.html">Roadmap</a>
+                    </li>
+                    <li class="dropdown-trigger">
+                        <a href="../../about/index.html">About Us</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="nav-cta">
+                <a href="../../contact/get-a-demo.html" class="btn-primary desktop-nav-only">[ Get a Demo ]</a>
+                <a href="../../contact/get-a-demo.html" class="btn-primary-mini mobile-drawer-only">Demo</a>
+                
+                <button class="hamburger-btn mobile-drawer-only" aria-label="Open menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- =========================================================
+         MOBILE OFF-CANVAS DRAWER
+         ========================================================= -->
+    <nav class="mobile-drawer overlay-solid-bg" aria-hidden="true">
+        <div class="drawer-header">
+            <span class="brand-text">Menu</span>
+            <button class="close-drawer-btn" aria-label="Close menu">&times;</button>
+        </div>
+        <div class="drawer-content">
+            <a href="../../platform/index.html" class="drawer-link">Platform</a>
+            
+            <div class="accordion">
+                <button class="accordion-header" aria-expanded="false">Solutions (21 Services) <span class="icon-plus"></span></button>
+                <div class="accordion-body">
+                    <div class="phase-group">
+                        <h5>Phase 1: Pre-Construction</h5>
+                        <a href="../../solutions/pre-construction/ai-bid-parsing.html">AI Bid Parsing</a>
+                        <a href="../../solutions/pre-construction/predictive-cost-estimation.html">Predictive Cost Estimation</a>
+                        <a href="../../solutions/pre-construction/massive-file-management.html">Massive File Management</a>
+                        <a href="../../solutions/pre-construction/automated-subcontractor-onboarding.html">Sub Onboarding</a>
+                    </div>
+                    <div class="phase-group">
+                        <h5>Phase 2: Active Site Ops</h5>
+                        <a href="../../solutions/active-site/wearable-worker-safety.html">Wearable Worker Safety</a>
+                    </div>
+                </div>
+            </div>
+
+            <a href="../../outcomes/index.html" class="drawer-link">Outcomes</a>
+            <a href="../../roadmap/index.html" class="drawer-link">Implementation Roadmap</a>
+            <a href="../../about/index.html" class="drawer-link">About Us</a>
+            
+            <div class="drawer-footer mobile-bottom-cta">
+                <a href="../../contact/get-a-demo.html" class="btn-primary full-width">Speak to an Architect</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- =========================================================
+         MAIN CONTENT
+         ========================================================= -->
+    <main>
+        
+        <!-- Solution Header Section -->
+        <section class="solution-header dark-texture-bg text-white">
+            <div class="container">
+                <nav class="breadcrumb">
+                    <a href="../../index.html">Home</a> &gt; 
+                    <a href="../../index.html#blueprint-matrix">Phase 1: Pre-Construction</a> &gt; 
+                    <span>Automated Subcontractor Onboarding</span>
+                </nav>
+
+                <div class="tech-badge-container">
+                    <span class="tech-badge">Salesforce Experience Cloud</span>
+                    <span class="tech-badge">AWS Lambda</span>
+                    <span class="tech-badge">AWS Textract</span>
+                </div>
+
+                <h1 class="fluid-h1">Streamlining Compliance: Automated Subcontractor Onboarding with Salesforce Experience Cloud & AWS Lambda</h1>
+                
+                <p class="hero-subtext fluid-h2-sub">
+                    General contractors can replace manual qualification bottlenecks with a fully automated, self-service onboarding engine by uniting Salesforce Experience Cloud with serverless AWS Lambda execution.
+                </p>
+            </div>
+        </section>
+
+        <!-- Solution Body Content & Sidebar Grid -->
+        <section class="container solution-body-grid">
+            <div class="solution-main-column">
+                
+                <!-- Overview -->
+                <article class="content-block">
+                    <p class="lead-paragraph">
+                        On commercial jobsites, general contractors are only as fast and reliable as their subcontractor network. Yet, onboarding new trade partners remains one of the most paperwork-intensive, high-risk processes in construction management.
+                    </p>
+                    <p>
+                        Before a trade partner sets foot on site, project executives must collect, review, and verify dozens of mandatory documents—including Certificates of Insurance (COIs), OSHA safety records, tax forms, master service agreements, and trade licenses.
+                    </p>
+                    <p>
+                        When this process relies on back-and-forth emails, physical binders, and manual spreadsheet tracking, critical compliance steps fall through the cracks. Assigning a subcontractor with expired General Liability coverage or an unverified safety rating exposes the entire project to immense legal liability and severe financial penalties.
+                    </p>
+                </article>
+
+                <hr class="section-divider">
+
+                <!-- The Problem -->
+                <article class="content-block">
+                    <h2>The Problem: Administrative Drag & Unvetted Jobsite Risk</h2>
+                    <p>
+                        Risk management and pre-qualification teams spend hours chasing trade partners for updated documentation. Standard subcontractor onboarding workflows create three critical operational bottlenecks:
+                    </p>
+                    
+                    <div class="callout-box">
+                        <h3>Three Critical Operational Bottlenecks:</h3>
+                        <ol>
+                            <li><strong>Slow Time-to-Jobsite:</strong> Manual document verification drags on for weeks, delaying contract execution and holding up trade mobilization on critical path schedule items.</li>
+                            <li><strong>High Human Error in Document Review:</strong> Compliance managers manually reviewing hundreds of ACORD insurance certificates can easily miss subtle, critical flaws—such as incorrect additional insured endorsements, low policy limits, or upcoming expiration dates.</li>
+                            <li><strong>Fragmented Communication & Lost Records:</strong> Subcontractors submit documents via disparate email threads to different project managers. Without a centralized portal, project teams lack real-time visibility into whether a sub on site is actually fully compliant.</li>
+                        </ol>
+                    </div>
+                </article>
+
+                <hr class="section-divider">
+
+                <!-- The Solution & Architecture -->
+                <article class="content-block">
+                    <h2>The Solution: Automated Verification via Experience Cloud & AWS Serverless</h2>
+                    <p>
+                        By deploying a custom portal on <strong>Salesforce Experience Cloud</strong> backed by <strong>AWS Lambda</strong> and document intelligence services, contractors create a seamless, self-service onboarding portal that verifies compliance in real time.
+                    </p>
+
+                    <!-- Blueprint Architecture Visual Block -->
+                    <div class="architecture-diagram-wrapper">
+                        <div class="diagram-header-bar">
+                            <span>ARCHITECTURE BLUEPRINT: AUTOMATED ONBOARDING</span>
+                            <span>SYS-REF: AWS-SF-04</span>
+                        </div>
+                        <pre class="diagram-ascii">
+Subcontractor Uploads Documents
+(COIs, Licenses, Safety Plans)
+              │
+              ▼
+  Salesforce Experience Cloud
+         Subcontractor Portal
+              │
+              ▼
+        AWS Lambda Trigger
+              │
+        ┌──────┴──────┐
+        ▼             ▼
+  AWS Textract   3rd-Party Verification APIs
+  (Extract Data)  (Check License & Insurance)
+        │             │
+        └──────┬──────┘
+               ▼
+    Salesforce Automation
+(Auto-Approve or Flag Issues)
+                        </pre>
+                    </div>
+
+                    <h3>How the Architecture Works</h3>
+                    <ol class="data-flow-list">
+                        <li>
+                            <strong>Self-Service Subcontractor Portal:</strong> Trade partners receive an invitation to a branded <strong>Salesforce Experience Cloud</strong> portal. Subcontractors can update company profiles, input banking details for ACH payments, and drag-and-drop compliance documents directly into guided web forms.
+                        </li>
+                        <li>
+                            <strong>Serverless Document Processing via AWS Lambda:</strong> The moment a file (such as a Certificate of Insurance) is uploaded, an event-driven <strong>AWS Lambda</strong> function triggers automatically.
+                        </li>
+                        <li>
+                            <strong>Automated Verification Pipeline:</strong>
+                            <ul>
+                                <li><strong>Extract Key Data:</strong> AWS Lambda calls AI extraction services to pull policy numbers, coverage limits, effective dates, and certificate holder details directly from the uploaded PDF.</li>
+                                <li><strong>API Validation:</strong> AWS Lambda executes background API calls to state licensing boards and insurance verification databases to validate that licenses and policies are active and legitimate.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Instant Salesforce Status Sync:</strong> The Lambda function compares extracted coverage metrics against project-specific requirements set in Salesforce.
+                            <ul>
+                                <li><strong>Full Compliance:</strong> The record in Salesforce is instantly marked as <em>Qualified</em>, auto-generating contract templates and clearing the subcontractor for site access.</li>
+                                <li><strong>Non-Compliance:</strong> If coverage limits fall short or a policy expires within 30 days, the portal automatically flags the specific deficiency and notifies the subcontractor to upload a corrected document.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </article>
+
+                <hr class="section-divider">
+
+                <!-- Impact & Results Grid -->
+                <article class="content-block">
+                    <h2>Business Impact & Results</h2>
+                    <p>Automating pre-qualification and credentialing transforms subcontractor compliance from an administrative headache into an efficient, repeatable safeguard:</p>
+
+                    <div class="impact-grid">
+                        <div class="impact-card">
+                            <span class="metric">80%</span>
+                            <h4>Reduction in Onboarding Time</h4>
+                            <p>Subcontractors move from initial invitation to fully verified status in days rather than weeks, keeping project mobilization on schedule.</p>
+                        </div>
+                        <div class="impact-card">
+                            <span class="metric">100%</span>
+                            <h4>Audit Readiness</h4>
+                            <p>Compliance records, policy numbers, and verified expiration dates are indexed directly on the subcontractor’s vendor account in Salesforce, providing instant proof of insurance.</p>
+                        </div>
+                        <div class="impact-card">
+                            <span class="metric">Zero</span>
+                            <h4>Uninsured Risk</h4>
+                            <p>Automated system triggers flag expiring insurance certificates 30, 60, and 90 days in advance, preventing unvetted or uninsured crews from stepping onto active sites.</p>
+                        </div>
+                        <div class="impact-card">
+                            <span class="metric">Frictionless</span>
+                            <h4>Trade Experience</h4>
+                            <p>Subcontractors gain a transparent, easy-to-use portal showing their exact qualification status, open bids, and outstanding compliance items without constant follow-up calls.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <hr class="section-divider">
+
+                <!-- Implementation Support -->
+                <article class="content-block">
+                    <h2>Why Partner with Us for Implementation?</h2>
+                    <p>
+                        Building an enterprise onboarding portal requires specialized knowledge of serverless cloud workflows, secure CRM access models, and construction risk management logic.
+                    </p>
+                    <p>We deliver an end-to-end deployment that protects your business:</p>
+                    <ul>
+                        <li><strong>Custom Experience Cloud Portal Design:</strong> Tailoring branded, mobile-responsive portals that make document uploads simple for subcontractors in the office or on the road.</li>
+                        <li><strong>Event-Driven AWS Architecture:</strong> Developing scalable AWS Lambda functions that securely process, inspect, and route documents with zero infrastructure overhead or idle costs.</li>
+                        <li><strong>Rules-Based Compliance Automation:</strong> Setting up custom validation logic in Salesforce tailored to your specific project tiers, trade risk profiles, and insurance requirements.</li>
+                    </ul>
+                </article>
+
+            </div>
+
+            <!-- Sticky Sidebar Column -->
+            <aside class="solution-sidebar">
+                <div class="sidebar-card highlight-card">
+                    <h3>Deploy This Architecture</h3>
+                    <p>Schedule a blueprint consultation with our cloud engineers to evaluate your vendor onboarding pipeline.</p>
+                    <a href="../../contact/get-a-demo.html" class="btn-primary high-vis-accent full-width text-center">Initiate Consultation</a>
+                </div>
+
+                <div class="sidebar-card">
+                    <h4>Phase 1 Solutions</h4>
+                    <ul class="sidebar-links">
+                        <li><a href="ai-bid-parsing.html">01. AI Bid Parsing</a></li>
+                        <li><a href="predictive-cost-estimation.html">02. Predictive Cost Est.</a></li>
+                        <li><a href="massive-file-management.html">03. Massive File Mgmt.</a></li>
+                        <li><a href="automated-subcontractor-onboarding.html" class="active">04. Sub Onboarding</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </section>
+
+    </main>
+
+    <!-- =========================================================
+         GLOBAL FOOTER
+         ========================================================= -->
+    <footer class="global-footer bg-blueprint-navy text-white">
+        <div class="container grid-5-col">
+            <div class="footer-brand footer-col-span-2">
+                <img src="../../assets/icons/amdg-logo-white.svg" alt="AMDG Development" class="footer-logo">
+                <p>Constructing the digital nervous system for commercial general contractors, heavy civil builders, and enterprise real estate developers.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Platform</h4>
+                <ul>
+                    <li><a href="../../platform/ecosystem.html">AWS + Salesforce</a></li>
+                    <li><a href="../../platform/security-compliance.html">Security &amp; Compliance</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="../../about/integration-architects.html">Leadership</a></li>
+                    <li><a href="../../about/careers.html">Careers</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="../../contact/get-a-demo.html">Get a Demo</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 AMDG Development. Proprietary and confidential. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
