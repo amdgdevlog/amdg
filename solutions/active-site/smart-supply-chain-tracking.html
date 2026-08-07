@@ -1,1 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
+    <title>Smart Supply Chain Tracking | AMDG Development</title>
+    <meta name="description" content="Digitize your construction material supply chain with AWS IoT Core and Salesforce Order Management for real-time tracking and automated laydown yard logistics.">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../../assets/icons/amdg-logo.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets in Strict Cascade Order -->
+    <link rel="stylesheet" href="../../css/normalize.css">
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+    <link rel="stylesheet" href="../../css/mega-menu.css">
+    <link rel="stylesheet" href="../../css/mobile-menu.css">
+    <link rel="stylesheet" href="../../css/solution-template.css">
+
+    <!-- Scripts -->
+    <script src="../../js/main.js" defer></script>
+    <script src="../../js/mobile-drawer.js" defer></script>
+    <script src="../../js/mega-menu.js" defer></script>
+    <script src="../../js/animations.js" defer></script>
+</head>
+
+<body>
+
+    <!-- =========================================================
+         GLOBAL HEADER & NAVIGATION (Sticky)
+         ========================================================= -->
+    <header class="sticky-nav">
+        <div class="nav-container">
+            <div class="brand">
+                <a href="../../index.html">
+                    <img src="../../assets/icons/amdg-logo.png" alt="AMDG Development" class="logo-img">
+                </a>
+            </div>
+
+            <nav class="desktop-nav-only">
+                <ul class="nav-links">
+                    <li class="dropdown-trigger">
+                        <a href="../../platform/index.html">Platform</a>
+                    </li>
+                    
+                    <li class="dropdown-trigger mega-menu-trigger">
+                        <a href="#">Solutions</a>
+                        <div class="mega-menu grid-5-col">
+                            <div class="mega-col">
+                                <h4>1. Pre-Construction</h4>
+                                <a href="../../solutions/pre-construction/ai-bid-parsing.html">AI Bid Parsing</a>
+                                <a href="../../solutions/pre-construction/predictive-cost-estimation.html">Predictive Cost Est.</a>
+                                <a href="../../solutions/pre-construction/massive-file-management.html">Massive File Mgmt.</a>
+                                <a href="../../solutions/pre-construction/automated-subcontractor-onboarding.html">Sub Onboarding</a>
+                            </div>
+                            <div class="mega-col">
+                                <h4>2. Active Site Ops</h4>
+                                <a href="../../solutions/active-site/heavy-machinery-predictive-maintenance.html">Machine Maint.</a>
+                                <a href="../../solutions/active-site/computer-vision-site-safety.html">Computer Vision</a>
+                                <a href="../../solutions/active-site/digital-twin-monitoring.html">Digital Twins</a>
+                                <a href="../../solutions/active-site/smart-supply-chain-tracking.html">Supply Tracking</a>
+                                <a href="../../solutions/active-site/weather-responsive-scheduling.html">Weather Scheduling</a>
+                                <a href="../../solutions/active-site/wearable-worker-safety.html">Wearable Safety</a>
+                            </div>
+                            <div class="mega-col">
+                                <h4>3. Project Management</h4>
+                                <a href="../../solutions/project-management/unified-client-command-center.html">Client Command Center</a>
+                                <a href="../../solutions/project-management/intelligent-contact-center.html">Cloud Contact Center</a>
+                                <a href="../../solutions/project-management/generative-ai-risk-flagging.html">GenAI Risk Flagging</a>
+                                <a href="../../solutions/project-management/automated-daily-site-logs.html">Voice Daily Logs</a>
+                            </div>
+                            <div class="mega-col">
+                                <h4>4. Post-Construction</h4>
+                                <a href="../../solutions/post-construction/smart-building-handoff.html">Smart Handoff</a>
+                                <a href="../../solutions/post-construction/automated-warranty-triage.html">Warranty Triage</a>
+                                <a href="../../solutions/post-construction/esg-sustainability-tracking.html">ESG Tracking</a>
+                            </div>
+                            <div class="mega-col">
+                                <h4>5. Enterprise IT</h4>
+                                <a href="../../solutions/enterprise-it/single-source-of-truth.html">Single Source of Truth</a>
+                                <a href="../../solutions/enterprise-it/agile-field-apps.html">Offline Mobile Apps</a>
+                                <a href="../../solutions/enterprise-it/automated-lien-waiver-processing.html">Lien Waiver Parsing</a>
+                                <a href="../../solutions/enterprise-it/disaster-recovery-archiving.html">Compliance Archiving</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="dropdown-trigger">
+                        <a href="../../outcomes/index.html">Outcomes</a>
+                    </li>
+                    <li class="dropdown-trigger">
+                        <a href="../../roadmap/index.html">Roadmap</a>
+                    </li>
+                    <li class="dropdown-trigger">
+                        <a href="../../about/index.html">About Us</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="nav-cta">
+                <a href="../../contact/get-a-demo.html" class="btn-primary desktop-nav-only">[ Get a Demo ]</a>
+                <a href="../../contact/get-a-demo.html" class="btn-primary-mini mobile-drawer-only">Demo</a>
+                
+                <button class="hamburger-btn mobile-drawer-only" aria-label="Open menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- =========================================================
+         MOBILE OFF-CANVAS DRAWER
+         ========================================================= -->
+    <nav class="mobile-drawer overlay-solid-bg" aria-hidden="true">
+        <div class="drawer-header">
+            <span class="brand-text">Menu</span>
+            <button class="close-drawer-btn" aria-label="Close menu">&times;</button>
+        </div>
+        <div class="drawer-content">
+            <a href="../../platform/index.html" class="drawer-link">Platform</a>
+            
+            <div class="accordion">
+                <button class="accordion-header" aria-expanded="false">Solutions (21 Services) <span class="icon-plus"></span></button>
+                <div class="accordion-body">
+                    <div class="phase-group">
+                        <h5>Phase 1: Pre-Construction</h5>
+                        <a href="../../solutions/pre-construction/ai-bid-parsing.html">AI Bid Parsing</a>
+                        <a href="../../solutions/pre-construction/predictive-cost-estimation.html">Predictive Cost Estimation</a>
+                    </div>
+                    <div class="phase-group">
+                        <h5>Phase 2: Active Site Ops</h5>
+                        <a href="../../solutions/active-site/wearable-worker-safety.html">Wearable Worker Safety</a>
+                    </div>
+                </div>
+            </div>
+
+            <a href="../../outcomes/index.html" class="drawer-link">Outcomes</a>
+            <a href="../../roadmap/index.html" class="drawer-link">Implementation Roadmap</a>
+            <a href="../../about/index.html" class="drawer-link">About Us</a>
+            
+            <div class="drawer-footer mobile-bottom-cta">
+                <a href="../../contact/get-a-demo.html" class="btn-primary full-width">Speak to an Architect</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- =========================================================
+         MAIN CONTENT
+         ========================================================= -->
+    <main>
+        
+        <!-- Solution Header Section -->
+        <section class="solution-header dark-texture-bg text-white">
+            <div class="container">
+                <nav class="breadcrumb">
+                    <a href="../../index.html">Home</a> &gt; 
+                    <a href="../../index.html#blueprint-matrix">Phase 2: Active Site Ops</a> &gt; 
+                    <span>Smart Supply Chain Tracking</span>
+                </nav>
+
+                <div class="tech-badge-container">
+                    <span class="tech-badge">AWS IoT Core</span>
+                    <span class="tech-badge">Amazon Location</span>
+                    <span class="tech-badge">Salesforce Order Management</span>
+                </div>
+
+                <h1 class="fluid-h1">Real-Time Material Visibility: Smart Supply Chain Tracking</h1>
+                
+                <p class="hero-subtext fluid-h2-sub">
+                    Pairing passive/active RFID infrastructure and AWS IoT Core with Salesforce Order Management to gain real-time, automated control over material movement from factory floor to final installation.
+                </p>
+            </div>
+        </section>
+
+        <!-- Solution Body Content & Sidebar Grid -->
+        <section class="container solution-body-grid">
+            <div class="solution-main-column">
+                
+                <!-- Overview -->
+                <article class="content-block">
+                    <p class="lead-paragraph">
+                        In commercial construction, jobsite progress relies heavily on just-in-time material delivery. Structural steel columns, custom curtain wall glass, precast concrete panels, and high-value MEP (Mechanical, Electrical, and Plumbing) assemblies must arrive on site in exact sequence.
+                    </p>
+                    <p>
+                        However, once raw materials leave the fabrication plant or supplier warehouse, general contractors usually lose visibility into their status. Project managers rely on phone calls, static shipping manifests, and manual gate logs to track critical materials.
+                    </p>
+                    <p>
+                        When a flatbed carrying custom structural steel gets delayed in transit—or arrives at the wrong gate without the field team knowing—installation crews stand idle, mobile cranes sit unused at $500 an hour, and downstream trades face scheduling conflicts.
+                    </p>
+                    <p>
+                        To eliminate jobsite blind spots and keep projects on schedule, forward-thinking contractors are digitizing their building material supply chains. By pairing <strong>AWS IoT Core</strong> and passive/active RFID infrastructure with <strong>Salesforce Order Management</strong>, construction firms gain real-time, automated control over material movement from factory floor to final installation.
+                    </p>
+                </article>
+
+                <hr class="section-divider">
+
+                <!-- The Problem -->
+                <article class="content-block">
+                    <h2>The Problem: Black-Box Logistics, Site Bottlenecks, &amp; Schedule Slippage</h2>
+                    <p>
+                        Managing material delivery across multiple vendors, logistics carriers, and laydown yards introduces severe operational risks:
+                    </p>
+                    
+                    <div class="callout-box">
+                        <h3>Three Primary Operational Risks:</h3>
+                        <ol>
+                            <li><strong>Lack of Transit Visibility:</strong> Project managers are routinely surprised by delivery delays, learning that essential structural components are missing only after installation crews are already on site.</li>
+                            <li><strong>Congested Laydown Yards &amp; Lost Materials:</strong> When materials arrive on large jobsites without automated scanning, components are often misplaced in sprawling laydown yards. Teams waste hours searching for specific tagged members, sometimes ordering duplicate replacements unnecessarily.</li>
+                            <li><strong>Manual Order Reconciliation:</strong> Project engineers spend hundreds of hours manually cross-referencing paper delivery tickets against purchase orders and project milestones in their ERP or CRM, delaying vendor invoice approvals and progress payments.</li>
+                        </ol>
+                    </div>
+                </article>
+
+                <hr class="section-divider">
+
+                <!-- The Solution & Architecture -->
+                <article class="content-block">
+                    <h2>The Solution: End-to-End Material Tracking via AWS IoT &amp; Salesforce Order Management</h2>
+                    <p>
+                        By placing industrial RFID tags or IoT cellular trackers on material shipments and deploying automated RFID gate readers at site entrances, contractors turn physical material movements into live data triggers inside <strong>Salesforce Order Management</strong>.
+                    </p>
+
+                    <!-- Blueprint Architecture Visual Block -->
+                    <div class="architecture-diagram-wrapper">
+                        <div class="diagram-header-bar">
+                            <span>ARCHITECTURE BLUEPRINT: RFID &amp; IOT INGESTION FLOW</span>
+                            <span>SYS-REF: AWS-SF-02</span>
+                        </div>
+                        <pre class="diagram-ascii">
+ Materials Tagged at Factory (RFID/IoT)
+                 │
+                 ▼
+     Material In-Transit / Gate Arrival
+                 │
+                 ▼
+  AWS IoT Core &amp; EventBridge Processing
+                 │
+        ┌────────┴────────┐
+        ▼                 ▼
+  Amazon Location     AWS Lambda Payload
+ (Geofence Alerts)        │
+                          ▼
+             Salesforce Order Management
+             (Fulfillment Status Updated)
+                          │
+                          ▼
+                 Automated Site Workflow
+           (Crane Dispatched / Schedule Adjusted)
+                        </pre>
+                    </div>
+
+                    <h3>How the Architecture Works</h3>
+                    <ol class="data-flow-list">
+                        <li>
+                            <strong>Tagging &amp; Dispatch:</strong> Suppliers or fabricators attach low-cost, durable RFID tags or BLE beacons to structural components at the factory. Item identifiers are linked directly to specific purchase orders inside Salesforce.
+                        </li>
+                        <li>
+                            <strong>In-Transit Tracking via AWS IoT Core:</strong> As delivery trucks move toward the jobsite, IoT gate scanners, cellular gateways, or Amazon Sidewalk-enabled tracking nodes read tag data and stream location updates to <strong>AWS IoT Core</strong>. <strong>Amazon Location Service</strong> monitors geofences around the jobsite, automatically firing alerts when a shipment is 30 minutes away.
+                        </li>
+                        <li>
+                            <strong>Automated Site Gate Ingestion:</strong> When the delivery truck passes through the jobsite entry gate, fixed RFID reader arches automatically scan the entire load in seconds without requiring the driver to step out or manually scan barcodes.
+                        </li>
+                        <li>
+                            <strong>Salesforce Order Management Sync:</strong> An <strong>AWS Lambda</strong> function transforms the raw RFID scan events and updates the corresponding record in <strong>Salesforce Order Management</strong>.
+                            <ul>
+                                <li>The purchase order status automatically updates from <em>In Transit</em> to <em>Delivered / On-Site</em>.</li>
+                                <li>Specific component line items are logged with exact laydown yard coordinates.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Intelligent Field Scheduling:</strong> Salesforce automatically notifies the site superintendent and rigging crew that the materials have arrived, dispatches crane capacity for offloading, and updates linked tasks in Salesforce Field Service.
+                        </li>
+                    </ol>
+                </article>
+
+                <hr class="section-divider">
+
+                <!-- Impact & Results Grid -->
+                <article class="content-block">
+                    <h2>Business Impact &amp; Results</h2>
+                    <p>Digitizing the construction material pipeline turns reactive site logistics into a predictable, automated workflow:</p>
+
+                    <div class="impact-grid">
+                        <div class="impact-card">
+                            <span class="metric">Zero</span>
+                            <h4>Idle Crew Time</h4>
+                            <p>Rigging crews, crane operators, and trade contractors are dispatched only when materials are physically confirmed on site or within the final approach geofence.</p>
+                        </div>
+                        <div class="impact-card">
+                            <span class="metric">95%</span>
+                            <h4>Reduction in Gate Processing Time</h4>
+                            <p>Automated RFID gate scanning processes entire truckloads in seconds, eliminating delivery truck queues and blocking adjacent traffic.</p>
+                        </div>
+                        <div class="impact-card">
+                            <span class="metric">100%</span>
+                            <h4>Elimination of Lost Material Rework</h4>
+                            <p>Real-time laydown yard mapping ensures every beam, panel, and spool is indexed by location in Salesforce, preventing costly re-orders of "lost" site inventory.</p>
+                        </div>
+                        <div class="impact-card">
+                            <span class="metric">Instant</span>
+                            <h4>Automated Invoice Matching</h4>
+                            <p>Material receipt data in Salesforce Order Management automatically reconciles vendor delivery tickets against purchase orders, accelerating payment cycles and eliminating billing disputes.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <hr class="section-divider">
+
+                <!-- Implementation Support -->
+                <article class="content-block">
+                    <h2>Why Partner with Us for Implementation?</h2>
+                    <p>
+                        Integrating physical supply chain sensors with enterprise CRM order fulfillment requires expertise in hardware selection, event-driven cloud architecture, and construction logistics.
+                    </p>
+                    <p>We offer a complete deployment model:</p>
+                    <ul>
+                        <li><strong>Industrial IoT &amp; RFID Architecture:</strong> Designing ruggedized RFID tag specifications (metal-mount, weatherproof) and configuring AWS IoT Core rules and Amazon Location Service geofences.</li>
+                        <li><strong>Salesforce Order Management Customization:</strong> Tailoring fulfillment workflows, purchase order lifecycle states, and field notifications inside Salesforce Order Management to align with your pre-construction and site ops workflows.</li>
+                        <li><strong>Supplier &amp; Fabricator Onboarding:</strong> Building simple vendor web portals in Salesforce Experience Cloud so your suppliers can easily bind RFID tags to purchase orders before shipping.</li>
+                    </ul>
+                </article>
+
+            </div>
+
+            <!-- Sticky Sidebar Column -->
+            <aside class="solution-sidebar">
+                <div class="sidebar-card highlight-card">
+                    <h3>Deploy This Architecture</h3>
+                    <p>Schedule a blueprint consultation with our cloud engineers to evaluate your active site operations.</p>
+                    <a href="../../contact/get-a-demo.html" class="btn-primary high-vis-accent full-width text-center">Initiate Consultation</a>
+                </div>
+
+                <div class="sidebar-card">
+                    <h4>Phase 2 Solutions</h4>
+                    <ul class="sidebar-links">
+                        <li><a href="heavy-machinery-predictive-maintenance.html">01. Machine Maint.</a></li>
+                        <li><a href="computer-vision-site-safety.html">02. Computer Vision</a></li>
+                        <li><a href="digital-twin-monitoring.html">03. Digital Twins</a></li>
+                        <li><a href="smart-supply-chain-tracking.html" class="active">04. Supply Tracking</a></li>
+                        <li><a href="weather-responsive-scheduling.html">05. Weather Scheduling</a></li>
+                        <li><a href="wearable-worker-safety.html">06. Wearable Safety</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </section>
+
+    </main>
+
+    <!-- =========================================================
+         GLOBAL FOOTER
+         ========================================================= -->
+    <footer class="global-footer bg-blueprint-navy text-white">
+        <div class="container grid-5-col">
+            <div class="footer-brand footer-col-span-2">
+                <img src="../../assets/icons/amdg-logo-white.svg" alt="AMDG Development" class="footer-logo">
+                <p>Constructing the digital nervous system for commercial general contractors, heavy civil builders, and enterprise real estate developers.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Platform</h4>
+                <ul>
+                    <li><a href="../../platform/ecosystem.html">AWS + Salesforce</a></li>
+                    <li><a href="../../platform/security-compliance.html">Security &amp; Compliance</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="../../about/integration-architects.html">Leadership</a></li>
+                    <li><a href="../../about/careers.html">Careers</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="../../contact/get-a-demo.html">Get a Demo</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 AMDG Development. Proprietary and confidential. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
